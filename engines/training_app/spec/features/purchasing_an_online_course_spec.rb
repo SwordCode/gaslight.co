@@ -10,9 +10,22 @@ feature "Purchasing an online course", js: true do
 
   let(:course) { FactoryGirl.create(:course, online: true) }
   let(:new_registration_page) { NewRegistrationPage.new }
-  scenario "submitting the form" do
-    new_registration_page.visit_page(course)
-    new_registration_page.submit_form("user_params")
-    expect(new_registration_page).to be_successful
+
+  describe "without a discount code" do
+    scenario do
+      new_registration_page.visit_page(course)
+      new_registration_page.submit_form()
+      expect(new_registration_page).to be_successful
+    end
+  end
+
+  describe "with a discount code" do
+    let(:discount_code) { 123 }
+    scenario do
+      new_registration_page.visit_page(course)
+      new_registration_page.submit_form({ discount_code: discount_code })
+      expect(new_registration_page).to be_successful
+    end
   end
 end
+

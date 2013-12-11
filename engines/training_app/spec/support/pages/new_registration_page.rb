@@ -1,11 +1,12 @@
 class NewRegistrationPage
   include Capybara::DSL
 
-  def visit_page(course)
-    visit "/training/courses/#{course.id}/registrations/new"
+  def visit_course(course, code=nil)
+    visit "/training/classroom/?code=#{code}#/courses/#{course.id}/purchase"
+    find('.ember-application') # wait for ember to initialize
   end
 
-  def submit_form(user)
+  def submit_form(options = {})
     fill_in "name", with: "Bob Jones"
     fill_in "email", with: "bobjones@example.com"
     fill_in "Name on Card", with: "Bob Jones"

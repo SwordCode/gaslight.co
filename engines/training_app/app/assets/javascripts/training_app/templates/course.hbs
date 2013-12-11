@@ -10,7 +10,7 @@
           Welcome to the {{title}} demo!<br/>
           If you like what you see, enroll in the full course!
         </p>
-        <a class="button button--primary" {{bind-attr href=registrationLink}}>Enroll now!</a>
+        {{#link-to 'course.purchase' this class="button button--primary"}}Enroll now!{{/link-to}}
       </div>
     {{/if}}
 
