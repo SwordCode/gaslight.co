@@ -5,7 +5,7 @@ module TrainingApp
     def attributes
       attrs = super
       if registration.nil? && !object.demo?
-        [:code_url, :video_url, :poster_url].each { |attr| attrs[attr] = nil}
+        [:code_url, :video_url, :poster_url, :description].each { |attr| attrs[attr] = nil}
       end
       attrs
     end
