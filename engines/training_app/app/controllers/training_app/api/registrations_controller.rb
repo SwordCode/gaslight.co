@@ -11,7 +11,7 @@ module TrainingApp
           session[:registration_code] = registration.code
           render json: { registration: registration }, status: :created
         else
-          render json: { errors: registration.errors } , status: :unprocessable_entity
+	  render json: { registration: registration, error_message: registration.errors.full_messages.to_sentence } , status: :unprocessable_entity
         end
       end
 
