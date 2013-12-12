@@ -23,7 +23,7 @@
         - if course.online?
           %h3.purchase-panel__price= number_to_currency(course.current_price, precision: 0)
           %a.purchase-panel__try.button.button--quiet{href: classroom_index_path(anchor: "/courses/#{course.id}")} Try now
-          %a.purchase-panel__buy.button.button--brand1{href: new_course_registration_path(course)} Buy Now
+          %a.purchase-panel__buy.button.button--brand1{href: classroom_index_path(anchor: "/courses/#{course.id}/register")} Buy Now
         - else
           %h3.purchase-panel__price
             = course.venue_city
