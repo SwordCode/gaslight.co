@@ -8,7 +8,9 @@ ActiveAdmin.register TrainingApp::Course do
   end
 
   index do
-    column :title
+    column do |course|
+      link_to(course.name, [:edit, :admin, :training_app, course])
+    end
     column :parent_course
     column :start_date
     column :end_date
@@ -22,7 +24,7 @@ ActiveAdmin.register TrainingApp::Course do
   show do |course|
     attributes_table do
       row :id
-      row :title
+      row :name
       row(:description_main) { pre course.description_main }
       row(:introduction) { pre course.introduction }
       row :synopsis
