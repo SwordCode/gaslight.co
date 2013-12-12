@@ -1,4 +1,6 @@
 Training.ApplicationController = Ember.Controller.extend
+  needs: ['flash']
+  flashBinding: 'controllers.flash'
   defaultTitle: "Classroom"
 
   init: ->

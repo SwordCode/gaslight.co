@@ -1,4 +1,5 @@
 Training.CourseRegisterController = Ember.ObjectController.extend
+  needs: ['flash']
   registrationErrors: null
   cardErrors: null
 
@@ -9,7 +10,7 @@ Training.CourseRegisterController = Ember.ObjectController.extend
 
   cardProps: (->
     @get('card').getProperties('name', 'number', 'expMonth', 'expYear')
-  ).property('card')
+  ).property('card.name', 'card.number', 'card.expMonth', 'card.expYear')
 
   createToken: ->
     Stripe.createToken @get('cardProps'), (status, response) =>
@@ -20,10 +21,10 @@ Training.CourseRegisterController = Ember.ObjectController.extend
         @set('cardErrors', response.error.message)
 
   handleSave: (registration) ->
-    debugger
     $.ajaxSetup(data: { code: registration.get('code') })
-    registration.get('course').reload()
-    @transitionToRoute('course', registration.get('course'))
+    registration.get('course').reload().then =>
+      @get('controllers.flash').add("Thanks for purchasing!")
+      @transitionToRoute('course', registration.get('course'))
 
   handleError: (e) ->
     @set('registrationErrors', e.errors)

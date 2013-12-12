@@ -14,10 +14,6 @@
 </head>
 <body>
 
-<% flash.each do |level, message| %>
-  <div class="flash flash--<%= level %>"><%= message %></div>
-<% end %>
-
 <%= yield %>
 
 </body>
