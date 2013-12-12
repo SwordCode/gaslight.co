@@ -14,6 +14,7 @@ PATH
       decent_exposure
       eco
       ember-rails
+      ember-source (~> 1.2.0)
       font-awesome-rails
       haml (~> 4.0)
       haml-rails
@@ -96,7 +97,7 @@ GEM
     eco-source (1.1.0.rc.1)
     ember-data-source (0.14)
       ember-source
-    ember-rails (0.14.0)
+    ember-rails (0.14.1)
       active_model_serializers
       barber (>= 0.4.1)
       ember-data-source
@@ -105,8 +106,8 @@ GEM
       handlebars-source
       jquery-rails (>= 1.0.17)
       railties (>= 3.1)
-    ember-source (1.1.2)
-      handlebars-source (= 1.0.12)
+    ember-source (1.2.0.1)
+      handlebars-source (~> 1.1.2)
     erubis (2.7.0)
     execjs (2.0.1)
     factory_girl (4.2.0)
@@ -115,17 +116,17 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffi (1.9.0)
-    font-awesome-rails (3.2.1.3)
+    font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     fssm (0.2.10)
-    haml (4.0.3)
+    haml (4.0.4)
       tilt
-    haml-rails (0.4)
-      actionpack (>= 3.1, < 4.1)
-      activesupport (>= 3.1, < 4.1)
-      haml (>= 3.1, < 4.1)
-      railties (>= 3.1, < 4.1)
-    handlebars-source (1.0.12)
+    haml-rails (0.5.1)
+      actionpack (~> 4.0.0)
+      activesupport (~> 4.0.0)
+      haml (>= 3.1, < 5.0)
+      railties (~> 4.0.0)
+    handlebars-source (1.1.2)
     hike (1.2.3)
     i18n (0.6.4)
     jquery-rails (3.0.4)
@@ -197,7 +198,7 @@ GEM
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
     slop (3.4.6)
-    sprockets (2.10.0)
+    sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
