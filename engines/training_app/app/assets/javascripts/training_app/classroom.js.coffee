@@ -16,8 +16,6 @@
 #= require_tree ./components
 #= require_tree ./controllers
 
-$.ajaxSetup(data: code: window.registrationCode)
-
 $.ajaxPrefilter (options, originalOptions, xhr) ->
   xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
 

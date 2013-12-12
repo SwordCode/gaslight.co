@@ -6,6 +6,7 @@ module TrainingApp
       def create
         registration = Registration.new(registration_params)
         if registration.purchase!
+          session[:registration_code] = registration.code
           render json: { registration: registration }, status: :created
         else
           render json: { errors: registration.errors } , status: :unprocessable_entity
@@ -20,7 +21,6 @@ module TrainingApp
       private
 
       def registration_params
-        # TODO - add :discount_code
         params.require(:registration).permit(:amount, :name, :email, :phone, :stripe_token, :course_id)
       end
     end

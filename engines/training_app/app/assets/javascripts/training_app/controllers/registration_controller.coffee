@@ -21,7 +21,6 @@ Training.CourseRegisterController = Ember.ObjectController.extend
         @set('cardErrors', response.error.message)
 
   handleSave: (registration) ->
-    $.ajaxSetup(data: { code: registration.get('code') })
     registration.get('course').reload().then =>
       @get('controllers.flash').add("Thanks for purchasing!")
       @transitionToRoute('course', registration.get('course'))
