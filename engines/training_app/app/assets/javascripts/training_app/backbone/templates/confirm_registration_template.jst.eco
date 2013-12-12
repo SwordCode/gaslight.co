@@ -1,9 +1,0 @@
-<form action="#">
-  <fieldset>
-    <h4>confirm</h4>
-		<p>You are about to register <%= @get 'name' %> for the <%= @courseTitle() %> 
-			course on <%= @startDate() %> in <%= @venueName() %>.</p>
-		<p>Your credit card will be charged $<%= @price() %>.00.  A confirmation email will be sent to <%= @get 'email' %> which will serve as your receipt.</p>
-		<input type="submit" class="submit" value="REGISTER (2 of 2)">
-	</fieldset>
-</form>
