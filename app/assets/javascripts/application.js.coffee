@@ -7,7 +7,6 @@
 #= require moment
 #= require backbone
 #= require backbone/gaslight
-#= require training_app/registrations
 #= require blog_app/application
 #= require ./coffee
 

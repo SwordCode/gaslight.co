@@ -42,7 +42,7 @@
               %a.brand1--link.element--sm-margin-bottom.element--sm-margin-top{href: course_path(course)} Learn more about the class.
               .course__actions
                 %a.button.button--quiet{href: classroom_index_path(anchor: "/courses/#{course.id}")} Try Now
-                %a.button.button--brand1{href: new_course_registration_path(course)} Buy Now
+                %a.button.button--brand1{href: classroom_index_path(anchor: "/courses/#{course.id}/register")} Buy Now
 
   %section
     .row

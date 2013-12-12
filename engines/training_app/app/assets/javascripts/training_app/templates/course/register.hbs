@@ -1,0 +1,93 @@
+<div class="main">
+  <div class="row">
+    <div class="large-8 large-centered columns">
+      <h1>{{course.title}}</h1>
+      <form {{action 'submit' on='submit'}} class="register-form">
+        <fieldset>
+          <legend>About You</legend>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="name">Name</label>
+              {{input value=name id="name"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="email">Email</label>
+              {{input value=email id="email"}}
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Credit Card</legend>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="cc-name">Name on Card</label>
+              {{input value=card.name id="cc-name"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-8 columns">
+              <label for="cc-number">Card Number</label>
+              {{input value=card.number id="cc-number"}}
+            </div>
+            <div class="large-4 columns">
+              <label for="cc-cvc">CVC</label>
+              {{input value=card.cvc id="cc-cvc"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-4 columns">
+              <label for="cc-month">Expiration Month (MM)</label>
+              {{input value=card.expMonth id="cc-month"}}
+            </div>
+            <div class="large-4 columns">
+              <label for="cc-year">Expiration Year (YYYY)</label>
+              {{input value=card.expYear id="cc-year"}}
+            </div>
+            <div class="large-4 columns"></div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="error">{{cardErrors}}</div>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <div class="row">
+            <div class="large-4 columns">
+              <label for="discount-code">Discount Code</label>
+              {{input value=discountCode id="discount-code"}}
+            </div>
+            <div class="large-4 columns">
+              <h2>
+                {{#if discountedPrice}}
+                  $<span class="register__price register__price--discounted">{{discountedPrice}}</span>
+                {{else}}
+                  $<span class="register__price register__price--regular">{{course.price}}</span>
+                {{/if}}
+              </h2>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="row">
+          <div class="large-4 columns">
+            {{#link-to 'course' course class="button-quiet"}}Cancel Purchase{{/link-to}}
+          </div>
+          <div class="large-4 columns">
+            <button type="submit" class="button button--full-width">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

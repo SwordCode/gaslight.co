@@ -5,6 +5,7 @@ module TrainingApp
     has_many :registrations
     has_many :sections
     has_many :chapters, through: :sections
+    has_many :discount_codes
     belongs_to :venue
 
     has_many :child_courses, class_name: 'TrainingApp::Course', foreign_key: :parent_course_id
@@ -53,8 +54,8 @@ module TrainingApp
       parent_course.present? ? parent_course.child_courses : []
     end
 
-    def to_s
-      title
+    def name
+      [title, venue_city].reject(&:nil?).join(' - ')
     end
 
     def meta

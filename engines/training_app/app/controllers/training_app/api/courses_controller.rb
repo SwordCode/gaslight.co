@@ -6,7 +6,7 @@ module TrainingApp
       serialization_scope :registration
 
       def registration
-        @registration ||= Registration.find_by_code(params[:code])
+        @registration = Registration.find_by_code(session[:registration_code])
       end
 
       def show
