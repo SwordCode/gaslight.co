@@ -28,7 +28,7 @@ feature "Viewing a course" do
     let(:course_show_page) { CourseShowPage.new }
     scenario "viewing purchase info" do
       course_show_page.visit_page(online_course)
-      expect(course_show_page.buy_now_link).to eq("/training/courses/#{online_course.id}/registrations/new")
+      expect(course_show_page.buy_now_link).to eq("/training/classroom#/courses/#{online_course.id}/register")
       expect(course_show_page.price).to eq("$199")
     end
     scenario "viewing description from markdown" do
