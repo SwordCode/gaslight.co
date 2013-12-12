@@ -1,17 +1,85 @@
 <div class="main">
   <div class="row">
-    <div class="large12 columns">
-      <h1>Purchase {{course.title}}</h1>
-      <form action=submit class="">
+    <div class="large-12 columns">
+      <h1>{{course.title}}</h1>
+      <form {{action 'submit' on='submit'}} class="register-form">
         <fieldset>
           <legend>About You</legend>
 
-          <label for="name">Name</label>
-          {{input value=name id="name"}}
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="name">Name</label>
+              {{input value=name id="name"}}
+            </div>
+          </div>
 
-          <label for="email">Email</label>
-          {{input value=name id="email"}}
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="email">Email</label>
+              {{input value=email id="email"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="phone">Phone</label>
+              {{input value=phone id="phone"}}
+            </div>
+          </div>
         </fieldset>
+
+        <fieldset>
+          <legend>Credit Card</legend>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="cc-name">Name on Card</label>
+              {{input value=card.name id="cc-name"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="cc-number">Card Number</label>
+              {{input value=card.number id="cc-number"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label for="cc-cvc">CVC</label>
+              {{input value=card.cvc id="cc-cvc"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <label for="cc-month">Expiration Month (MM)</label>
+              {{input value=card.expMonth id="cc-month"}}
+            </div>
+            <div class="large-3 columns">
+              <label for="cc-year">Expiration Year (YYYY)</label>
+              {{input value=card.expYear id="cc-year"}}
+            </div>
+            <div class="large-6 columns"></div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="error">{{errors}}</div>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <div class="row">
+          <div class="large-2 columns">
+            {{#link-to 'course' course class="button-quiet"}}Cancel Purchase{{/link-to}}
+          </div>
+          <div class="large-2 columns">
+            <button type="submit" class="button button--full-width">Buy now!</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
