@@ -9,23 +9,22 @@ feature "Purchasing an online course", js: true do
   after { Capybara.default_wait_time = @origional_wait_time }
 
   let(:course) { FactoryGirl.create(:course, online: true) }
-  let(:new_registration_page) { NewRegistrationPage.new }
+  let(:registration_page) { RegistrationPage.new }
 
   describe "without a discount code" do
     scenario do
-      new_registration_page.visit_page(course)
-      new_registration_page.submit_form()
-      expect(new_registration_page).to be_successful
+      registration_page.visit_page(course)
+      registration_page.submit_form()
+      expect(registration_page).to be_successful
     end
   end
 
   describe "with a discount code" do
     let(:discount_code) { 123 }
     scenario do
-      new_registration_page.visit_page(course)
-      new_registration_page.submit_form({ discount_code: discount_code })
-      expect(new_registration_page).to be_successful
+      registration_page.visit_page(course)
+      registration_page.submit_form({ discount_code: discount_code })
+      expect(registration_page).to be_successful
     end
   end
 end
-

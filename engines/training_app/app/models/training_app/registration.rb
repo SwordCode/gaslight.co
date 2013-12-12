@@ -16,9 +16,11 @@ module TrainingApp
       if valid? && customer.error.blank?
         save!
         send_confirmation
+        return true
       else
         errors.add :base, customer.error
       end
+      return false
     end
 
     private

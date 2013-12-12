@@ -1,9 +1,10 @@
 Training.CourseRegisterController = Ember.ObjectController.extend
-  errors: null
+  registrationErrors: null
+  cardErrors: null
 
   actions:
     submit: ->
-      @set('errors', null)
+      @set('cardErrors', null)
       @createToken()
 
   cardProps: (->
@@ -14,6 +15,15 @@ Training.CourseRegisterController = Ember.ObjectController.extend
     Stripe.createToken @get('cardProps'), (status, response) =>
       if (status == 200)
         @set('stripe_token', response.id)
-        @get('model').save()
+        @get('model').save().then ((reg) => @handleSave(reg)), ((reg) => @handleError(reg))
       else
-        @set('errors', response.error.message)
+        @set('cardErrors', response.error.message)
+
+  handleSave: (registration) ->
+    debugger
+    $.ajaxSetup(data: { code: registration.get('code') })
+    registration.get('course').reload()
+    @transitionToRoute('course', registration.get('course'))
+
+  handleError: (e) ->
+    @set('registrationErrors', e.errors)

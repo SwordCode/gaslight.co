@@ -5,8 +5,11 @@ module TrainingApp
 
       def create
         registration = Registration.new(registration_params)
-        registration.purchase!
-        respond_with registration
+        if registration.purchase!
+          render json: { registration: registration }, status: :created
+        else
+          render json: { errors: registration.errors } , status: :unprocessable_entity
+        end
       end
 
       def stats
