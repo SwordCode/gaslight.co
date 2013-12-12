@@ -69,7 +69,13 @@
               {{input value=discountCode id="discount-code"}}
             </div>
             <div class="large-4 columns">
-              <h2>${{course.price}}.00</h2>
+              <h2>
+                {{#if discountedPrice}}
+                  $<span class="register__price register__price--discounted">{{discountedPrice}}</span>
+                {{else}}
+                  $<span class="register__price register__price--regular">{{course.price}}</span>
+                {{/if}}
+              </h2>
             </div>
           </div>
         </fieldset>

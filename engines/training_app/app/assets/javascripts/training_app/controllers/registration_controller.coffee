@@ -27,3 +27,13 @@ Training.CourseRegisterController = Ember.ObjectController.extend
 
   handleError: (e) ->
     @set('registrationErrors', e.errors)
+
+  discountCodeDidChange: (->
+    Ember.run.throttle(this, 'fetchDiscount', 300);
+  ).observes('discountCode')
+
+  fetchDiscount: ->
+    return unless @get('discountCode')? && @get('discountCode').length > 2
+    $.getJSON("/training/api/discount_codes/#{@get('discountCode')}").then (response) =>
+      @set('discountedPrice', response.discount_code.price)
+

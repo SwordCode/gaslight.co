@@ -5,7 +5,9 @@ module TrainingApp
 
       def create
         registration = Registration.new(registration_params)
-        if registration.purchase!
+        price = discounted? ? discount_code.price : registration.course.price
+
+        if registration.purchase!(price)
           session[:registration_code] = registration.code
           render json: { registration: registration }, status: :created
         else
@@ -22,6 +24,14 @@ module TrainingApp
 
       def registration_params
         params.require(:registration).permit(:amount, :name, :email, :phone, :stripe_token, :course_id)
+      end
+
+      def discounted?
+        discount_code.present?
+      end
+
+      def discount_code
+        @discount_code = DiscountCode.find_by_code(params[:registration][:discount_code])
       end
     end
   end

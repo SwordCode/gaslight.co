@@ -5,5 +5,5 @@ Training.Registration = DS.Model.extend
   phone: DS.attr('string')
   code: DS.attr('string')
   stripe_token: DS.attr('string')
-  discount_code: DS.attr('string')
+  discountCode: DS.attr('string')
   course: DS.belongsTo('course')

@@ -14,7 +14,7 @@ module TrainingApp
       before do
         allow(Customer).to receive(:generate) { customer }
         expect(customer).to receive(:charge).with(amount: course.price, description: course.title)
-        registration.purchase!
+        registration.purchase!(course.price)
       end
 
       describe "with a valid customer" do

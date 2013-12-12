@@ -8,8 +8,8 @@ module TrainingApp
     validates_uniqueness_of :code
     before_validation :generate_code, on: :create, unless: Proc.new { |r| r.code.present? }
 
-    def purchase!
-      self.amount = course.price
+    def purchase!(amount)
+      self.amount = amount
       customer = Customer.generate(token: stripe_token, email: email, name: name)
       self.customer_id = customer.id
       customer.charge(amount: amount, description: course.title)
