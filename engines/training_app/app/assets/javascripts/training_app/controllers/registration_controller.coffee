@@ -3,6 +3,7 @@ Training.CourseRegisterController = Ember.ObjectController.extend
 
   actions:
     submit: ->
+      @set('errors', null)
       @createToken()
 
   cardProps: (->
