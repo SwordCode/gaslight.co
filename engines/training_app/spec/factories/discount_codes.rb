@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :discount_code, class: TrainingApp::DiscountCode do
     code "yehudasentme"
     price 100
+    course
   end
 end
