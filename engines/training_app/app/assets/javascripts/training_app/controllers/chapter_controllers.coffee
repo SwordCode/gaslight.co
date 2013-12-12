@@ -13,5 +13,5 @@ Training.ChaptersIndexController = Ember.ArrayController.extend
   ).property('controllers.course')
 
   firstChapter: (->
-    @get('controllers.course.sections.firstObject.chapters').findBy('demo', true)
+    @get('store').all('chapter').findBy('demo', true)
   ).property('controllers.course')
