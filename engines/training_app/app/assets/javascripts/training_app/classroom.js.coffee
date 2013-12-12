@@ -5,7 +5,9 @@
 #= require training_app/video-js
 #= require training_app/moment
 #= require training_app/showdown
+#= require training_app/stripe
 #= require_self
+#= require ./stripe_key
 #= require ./store
 #= require_tree ./helpers
 #= require_tree ./templates
