@@ -29,7 +29,7 @@ Training.CourseRegisterController = Ember.ObjectController.extend
     @set('registrationErrors', e.errors)
 
   discountCodeDidChange: (->
-    Ember.run.throttle(this, 'fetchDiscount', 300);
+    Ember.run.throttle(this, 'fetchDiscount', 300)
   ).observes('discountCode')
 
   fetchDiscount: ->
