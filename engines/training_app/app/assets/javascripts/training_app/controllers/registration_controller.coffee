@@ -21,7 +21,7 @@ Training.CourseRegisterController = Ember.ObjectController.extend
         @set('stripe_token', response.id)
         @get('model').save().then(@handleSave.bind(this), @handleError.bind(this))
       else
-	@set('purchasePending', false)
+        @set('purchasePending', false)
         @set('cardErrors', response.error.message)
 
   handleSave: (registration) ->
@@ -43,7 +43,8 @@ Training.CourseRegisterController = Ember.ObjectController.extend
 
   fetchDiscount: ->
     return unless @get('discountCode')? && @get('discountCode').length > 2
-    $.getJSON(@get('discountCodeURL')).then(@handleDiscountSuccess.bind(this, response), @handleDiscountError.bind(this, response))
+    @set('discountPending', true)
+    Ember.$.getJSON(@get('discountCodeURL')).then(@handleDiscountSuccess.bind(this), @handleDiscountError.bind(this))
 
   handleDiscountSuccess: (response) ->
     @set('discountPending', false)
