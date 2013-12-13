@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "haml", '~> 4.0'
   s.add_dependency "haml-rails"
   s.add_dependency "sass-rails", "~> 4.0.0"
-  s.add_dependency "compass-rails", "~> 2.0.alpha.0"
+  s.add_dependency "compass-rails", "1.1.0.pre"
   s.add_dependency "font-awesome-rails"
   s.add_dependency "ember-rails"
   s.add_dependency "ember-source", "~> 1.2.0"

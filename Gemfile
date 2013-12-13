@@ -19,7 +19,7 @@ gem 'blog_app', path: 'engines/blog_app'
 gem 'foundation_rails_helper', github: 'sgruhier/foundation_rails_helper', ref: 'ed5b2903'
 gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 
-gem 'compass-rails', '2.0.alpha.0'
+gem 'compass-rails', '1.1.0.pre'
 gem 'activeadmin',         github: 'gregbell/active_admin'
 
 # Gems used only for assets and not required
