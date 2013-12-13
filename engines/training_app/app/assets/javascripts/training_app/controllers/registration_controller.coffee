@@ -16,7 +16,7 @@ Training.CourseRegisterController = Ember.ObjectController.extend
     Stripe.createToken @get('cardProps'), (status, response) =>
       if (status == 200)
         @set('stripe_token', response.id)
-        @get('model').save().then ((reg) => @handleSave(reg)), ((reg) => @handleError(reg))
+        @get('model').save().then(@handleSave.bind(this), @handleError.bind(this))
       else
         @set('cardErrors', response.error.message)
 
@@ -32,8 +32,12 @@ Training.CourseRegisterController = Ember.ObjectController.extend
     Ember.run.throttle(this, 'fetchDiscount', 300)
   ).observes('discountCode')
 
+  discountCodeURL: (->
+    "/training/api/discount_codes/#{@get('discountCode')}"
+  ).property('discountCode')
+
   fetchDiscount: ->
     return unless @get('discountCode')? && @get('discountCode').length > 2
-    $.getJSON("/training/api/discount_codes/#{@get('discountCode')}").then (response) =>
+    $.getJSON(@get('discountCodeURL')).then (response) =>
       @set('discountedPrice', response.discount_code.price)
 
