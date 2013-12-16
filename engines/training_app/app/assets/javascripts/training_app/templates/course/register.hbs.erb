@@ -74,16 +74,12 @@
 	      <label for="discount-code">Discount Code</label>
 	      {{input value=discountCode id="discount-code"}}
 	      {{#if discountPending}}
-		<img class="spinner" src="<%= image_path('training_app/spinner.gif') %>" alt="Spinner" />
+          <img class="spinner" src="<%= image_path('training_app/spinner.gif') %>" alt="Spinner" />
 	      {{/if}}
 	    </div>
 	    <div class="large-4 columns">
 	      <h2>
-		{{#if discountedPrice}}
-		  $<span class="register__price register__price--discounted">{{discountedPrice}}</span>
-		{{else}}
-		  $<span class="register__price register__price--regular">{{course.price}}</span>
-		{{/if}}
+          $<span {{bind-attr class=":price isDiscounted:price--discounted:price--regular"}}>{{currentPrice}}</span>
 	      </h2>
 	    </div>
 	  </div>

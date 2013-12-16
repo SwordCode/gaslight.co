@@ -1,7 +1,7 @@
 Training.CourseRegisterController = Ember.ObjectController.extend
   needs: ['flash']
   purchasePending: false
-  isDiscounting: false
+  discountPending: false
   registrationErrors: null
   cardErrors: null
 
@@ -10,6 +10,14 @@ Training.CourseRegisterController = Ember.ObjectController.extend
       @set('cardErrors', null)
       @set('purchasePending', true)
       @createToken()
+
+  currentPrice: (->
+    if @get('discountedPrice')? then @get('discountedPrice') else @get('course.price')
+  ).property('course.price', 'discountedPrice')
+
+  isDiscounted: (->
+    @get('discountedPrice')?
+  ).property('discountedPrice')
 
   cardProps: (->
     @get('card').getProperties('name', 'number', 'expMonth', 'expYear')

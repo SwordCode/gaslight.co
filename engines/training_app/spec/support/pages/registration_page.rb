@@ -22,11 +22,11 @@ class RegistrationPage
   end
 
   def regular_price
-    find('.register__price--regular').text.to_i
+    find('.price--regular').text.to_i
   end
 
   def discounted_price
-    find('.register__price--discounted').text.to_i
+    find('.price--discounted').text.to_i
   end
 
   def successful?

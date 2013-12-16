@@ -12,7 +12,7 @@ module TrainingApp
       self.amount = amount
       customer = Customer.generate(token: stripe_token, email: email, name: name)
       self.customer_id = customer.id
-      customer.charge(amount: amount, description: course.title)
+      customer.charge(amount: amount, description: course.title) if amount > 0
       if valid? && customer.error.blank?
         save!
         send_confirmation
