@@ -34,14 +34,6 @@ ActiveRecord::Schema.define(version: 20131212202421) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "alias_tags", id: false, force: true do |t|
-    t.integer "tag_id"
-    t.integer "alias_id"
-  end
-
-  add_index "alias_tags", ["alias_id"], name: "index_alias_tags_on_alias_id", using: :btree
-  add_index "alias_tags", ["tag_id"], name: "index_alias_tags_on_tag_id", using: :btree
-
   create_table "blog_app_alias_tags", id: false, force: true do |t|
     t.integer "tag_id"
     t.integer "alias_id"
@@ -92,54 +84,6 @@ ActiveRecord::Schema.define(version: 20131212202421) do
 
   create_table "blog_app_tags", force: true do |t|
     t.string "name"
-  end
-
-  create_table "old_slugs", id: false, force: true do |t|
-    t.integer  "id",         default: "nextval('old_slugs_id_seq'::regclass)", null: false
-    t.string   "old_slug"
-    t.string   "new_slug"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "old_slugs", ["old_slug"], name: "index_old_slugs_on_old_slug", using: :btree
-
-  create_table "posts", id: false, force: true do |t|
-    t.integer  "id",                      default: "nextval('posts_id_seq'::regclass)", null: false
-    t.string   "title"
-    t.string   "slug"
-    t.string   "author"
-    t.string   "old_tags"
-    t.text     "body"
-    t.text     "html"
-    t.datetime "published_at"
-    t.datetime "created_at",                                                            null: false
-    t.datetime "updated_at",                                                            null: false
-    t.string   "audio_url"
-    t.text     "description"
-    t.integer  "external_comments_count", default: 0
-  end
-
-  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
-
-  create_table "taggings", id: false, force: true do |t|
-    t.integer  "id",            default: "nextval('taggings_id_seq'::regclass)", null: false
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context"
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
-
-  create_table "tags", id: false, force: true do |t|
-    t.integer "id",   default: "nextval('tags_id_seq'::regclass)", null: false
-    t.string  "name"
   end
 
   create_table "training_app_chapters", force: true do |t|
