@@ -9,7 +9,6 @@ class TrainingApp::ApplicationController < ApplicationController
 
   def ssl_required?
     (Rails.env.production? || Rails.env.staging?) && !request.ssl?
-    false
   end
 
   def raise_not_found
