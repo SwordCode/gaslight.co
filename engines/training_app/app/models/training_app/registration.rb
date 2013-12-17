@@ -1,6 +1,5 @@
 module TrainingApp
   class Registration < ActiveRecord::Base
-    attr_accessor :freebie
 
     belongs_to :course
 
@@ -12,13 +11,15 @@ module TrainingApp
       self.amount = amount
       customer = Customer.generate(token: stripe_token, email: email, name: name)
       self.customer_id = customer.id
-      customer.charge(amount: amount, description: course.title) if amount > 0
-      if valid? && customer.error.blank?
-        save!
-        send_confirmation
-        return true
-      else
-        errors.add :base, customer.error
+      if valid?
+        customer.charge(amount: amount, description: course.title) if amount > 0
+        if customer.error.blank?
+          save!
+          send_confirmation
+          return true
+        else
+          errors.add :base, customer.error
+        end
       end
       return false
     end
