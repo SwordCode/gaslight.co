@@ -53,7 +53,10 @@ Training.CourseRegisterController = Ember.ObjectController.extend
 
   handleRegistrationError: (response) ->
     @set('purchasePending', false)
-    @set('registrationErrors', response.responseJSON.error_message)
+    if response.responseJSON?
+      @set('registrationErrors', response.responseJSON.error_message)
+    else
+      @set('registrationErrors', "Oops! Something went wrong. Please send an email to training@gaslight.co and we'll get you setup.")
 
   fetchDiscount: ->
     return unless @get('discountCode')? && @get('discountCode').length > 2
