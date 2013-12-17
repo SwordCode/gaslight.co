@@ -3,10 +3,6 @@
 <head>
   <title>Classroom</title>
   <%= stylesheet_link_tag "training_app/classroom", media: "all" %>
-  <script type="text/javascript">
-    window.registrationCode = "<%= yield :registration_code %>"
-  </script>
-
   <%= favicon_link_tag "32x32icon.png" %>
   <%= javascript_include_tag "training_app/classroom" %>
   <%= yield :javascript %>

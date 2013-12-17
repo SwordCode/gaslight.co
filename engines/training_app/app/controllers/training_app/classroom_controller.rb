@@ -10,7 +10,6 @@ module TrainingApp
     def registration
       @registration ||= Registration.find_by_code(params[:code])
     end
-    helper_method :registration
   end
 end
 
