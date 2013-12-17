@@ -9,5 +9,13 @@ module TrainingApp
       end
       attrs
     end
+
+    def video_url
+      "//#{ENV.fetch('CLOUDFRONT_CDN_DOMAIN')}#{object.video_url}"
+    end
+
+    def poster_url
+      "//#{ENV.fetch('CLOUDFRONT_CDN_DOMAIN')}#{object.poster_url}"
+    end
   end
 end
