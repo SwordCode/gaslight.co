@@ -47,10 +47,6 @@ class ClassroomPage
     has_css?('.modal.modal--active')
   end
 
-  def registration_url
-    find('.modal__actions .button--primary')[:href]
-  end
-
   def showing_demo?
     has_css?('.bar__notice--demo')
   end

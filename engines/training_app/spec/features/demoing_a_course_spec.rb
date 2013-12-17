@@ -31,7 +31,6 @@ feature "Demoing a course", js: true do
         classroom_page.visit_course(restricted_chapter.course) #visit the course first to prevent routing error
         classroom_page.visit_chapter(restricted_chapter)
         expect(classroom_page).to be_showing_purchase_modal
-        expect(classroom_page.registration_url).to match("/#{restricted_chapter.section.course.id}/registrations/new")
       end
     end
   end
