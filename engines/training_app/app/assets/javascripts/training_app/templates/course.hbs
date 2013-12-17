@@ -1,4 +1,20 @@
-{{purchase-modal active=purchasing course=this}}
+{{#modal-dialog active=isModalActive}}
+  <div class="row">
+    <h1>Thanks for trying {{title}}</h1>
+    <p>There's plenty more great content where that came from! If you enjoyed what you saw here, enroll in the full course!</p>
+  </div>
+
+  <hr/>
+
+  <div class="modal__actions row">
+    <div class="large-4 columns">
+      <a class="action action--secondary button button--quiet" href="/training/">Exit the demo</a>
+    </div>
+    <div class="large-4 columns">
+      <a class="button button--primary" {{action register}}>Enroll now!</a>
+    </div>
+  </div>
+{{/modal-dialog}}
 
 <header class="header">
   <div class="info-bar">
@@ -14,14 +30,6 @@
       </div>
     {{/if}}
 
-{{!--
-    <div class="info-bar__profile">
-      <div class="profile__picture">
-        <img alt="user" class="picture--default" src="/assets/training_app/user.png"/>
-      </div>
-      <p class="profile__name"> Admiral William Adama </p>
-    </div>
---}}
   </div>
 
   <div class="progress-bar">

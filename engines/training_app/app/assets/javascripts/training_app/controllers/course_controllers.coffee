@@ -1,17 +1,18 @@
 Training.CourseController = Ember.ObjectController.extend
   needs: ['chapter', 'application']
-  purchasing: false
+  isModalActive: false
+
+  actions: 
+    register: ->
+      @set('isModalActive', false)
+      @transitionToRoute('course.register', @get('model'))
 
   barStyle: (->
     "width: #{@get('controllers.chapter.progress') * 100}%"
   ).property('controllers.chapter.progress')
 
-  registrationLink: (->
-    "/training/courses/#{@get('id')}/registrations/new/"
-  ).property('id')
-
   purchase: ->
-    @set('purchasing', true)
+    @set('isModalActive', true)
 
 Training.CourseIndexController = Ember.Controller.extend
   needs: ['course']
