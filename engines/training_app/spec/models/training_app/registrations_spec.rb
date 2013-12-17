@@ -4,6 +4,8 @@ module TrainingApp
   describe Registration do
 
     it { should validate_presence_of(:course) }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:email) }
     it { should belong_to(:course) }
 
     describe "purchase!" do
