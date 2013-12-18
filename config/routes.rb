@@ -21,6 +21,7 @@ Gaslight::Application.routes.draw do
   get 'about', to: 'pages#about'
   root to: 'pages#show', id: 'home'
 
+  get "/work", to: "pages#show", id: "work/index"
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#server_error"
 end
