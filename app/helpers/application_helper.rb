@@ -27,6 +27,6 @@ module ApplicationHelper
   def gravatar_url(email, size = "32x32")
     return "" if email.nil?
     hash = Digest::MD5.hexdigest(email)
-    "http://www.gravatar.com/avatar/#{hash}?s=#{size}"
+    "//www.gravatar.com/avatar/#{hash}?s=#{size}"
   end
 end
