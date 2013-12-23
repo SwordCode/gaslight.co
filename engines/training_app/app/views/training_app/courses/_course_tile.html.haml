@@ -7,3 +7,6 @@
     .course__actions
       %a.button.button--quiet{href: course_path(course)} Learn more about the class.
       %a.button.button--brand1{href: course.registration_link} Save Your Spot
+    .course__type
+      =image_tag "icons/#{course_class(course)}.svg", :class => "course__type-icon" 
+      %p= course.online? ? 'Online' : 'In Person'
