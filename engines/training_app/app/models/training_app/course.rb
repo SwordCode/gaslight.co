@@ -80,7 +80,7 @@ module TrainingApp
     end
 
     def self.active
-      where(active: true)
+      where(active: true).order('start_date')
     end
 
     def self.online

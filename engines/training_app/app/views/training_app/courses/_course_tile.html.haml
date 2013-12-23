@@ -1,0 +1,9 @@
+.columns.large-6
+  .course.center{class: course_class(course)}
+    %a{href: course_path(course)}
+      %img.course__img{src: course.image_url}
+    %h2.course__title.subheading= course.title
+    %p= course.meta
+    .course__actions
+      %a.button.button--quiet{href: course_path(course)} Learn more about the class.
+      %a.button.button--brand1{href: course.registration_link} Save Your Spot
