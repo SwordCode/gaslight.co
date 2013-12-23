@@ -5,8 +5,12 @@
     %h2.course__title.subheading= course.title
     %p= course.meta
     .course__actions
-      %a.button.button--quiet{href: course_path(course)} Learn more about the class.
-      %a.button.button--brand1{href: course.registration_link} Save Your Spot
+      - if course.online?
+        %a.button.button--quiet{href: classroom_index_path(anchor: "/courses/#{course.id}")} Try Now
+        %a.button.button--brand1{href: classroom_index_path(anchor: "/courses/#{course.id}/register")} Buy Now
+      - elsif course.active?
+        %a.button.button--quiet{href: course_path(course)} Learn more about the class.
+        %a.button.button--brand1{href: course.registration_link} Save Your Spot
     .course__type
       =image_tag "icons/#{course_class(course)}.svg", :class => "course__type-icon" 
       %p= course.online? ? 'Online' : 'In Person'
