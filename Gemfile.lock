@@ -371,6 +371,9 @@ GEM
     snoo (0.1.2)
       httparty
       nokogiri
+    spring (1.0.0)
+    spring-commands-rspec (1.0.1)
+      spring (>= 0.9.1)
     sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -450,6 +453,8 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sentry-raven!
   shoulda-matchers
+  spring
+  spring-commands-rspec
   timecop
   training_app!
   uglifier (~> 2.1.0)
