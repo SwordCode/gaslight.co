@@ -49,6 +49,7 @@ PATH
   remote: engines/blog_app
   specs:
     blog_app (0.0.1)
+      active_model_serializers
       acts-as-taggable-on
       compass-rails (~> 1.1.0.pre)
       decent_exposure

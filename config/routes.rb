@@ -5,7 +5,13 @@ Gaslight::Application.routes.draw do
   mount BlogApp::Engine, at: 'blog'
   get 'authors', to: redirect('/blog/authors')
   get 'blog.rss', to: 'blog_app/posts#index', format: "rss"
+  get 'blog.json', to: 'blog_app/posts#index', format: "json"
   get 'post/:id(/:slug)', to: 'blog_app/posts#old' # handle old tumblr urls
+
+  scope 'api' do
+    resources :posts, controller: 'blog_app/posts', format: 'json'
+    match '/posts/:id', action: :options, controller: 'blog_app/posts', via: :options
+  end
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config

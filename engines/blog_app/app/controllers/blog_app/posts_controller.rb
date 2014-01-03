@@ -7,7 +7,7 @@ module BlogApp
     before_filter :old_post?, only: :show
 
     expose(:posts) { Post.published.by_publish_date }
-    expose(:post) { Post.slugged(params[:slug] || params[:id]) }
+    expose(:post) { params[:id].present? ? Post.find(params[:id]) : Post.slugged(params[:slug]) }
     expose(:popular_tags) { Post.tag_counts.order('count desc').limit(20) }
     expose(:authors) { Post.authors }
     expose(:author) { Author.find_by_tumblr(params[:author].to_s.downcase) }
@@ -52,6 +52,15 @@ module BlogApp
       respond_with post, layout: false
     end
 
+    def options
+      render nothing: true
+    end
+
+    def update
+      post.update_attributes!(post_params)
+      respond_with post
+    end
+
     protected
 
     def search_date
@@ -63,7 +72,7 @@ module BlogApp
     helper_method :search_date
 
     def items_per_page
-      return 15 if request.format == 'rss'
+      return Post.count if %w(rss json).include?(request.format)
       index? ? 3 : 20
     end
 
@@ -76,6 +85,10 @@ module BlogApp
       if old = OldSlug.where(old_slug: params[:id] || params[:slug]).first
         redirect_to post_url(old.new_slug), status: 301
       end
+    end
+
+    def post_params
+      params.require(:post).permit(:title, :description, :body, :slug, :audio_url, :author, :published_at)
     end
   end
 end
