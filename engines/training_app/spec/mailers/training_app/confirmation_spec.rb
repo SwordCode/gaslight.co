@@ -12,6 +12,7 @@ module TrainingApp
     it "renders the email" do
       expect(registration_mail.body).to match registration.course.title
       expect(registration_mail.body).to match "code=#{registration.code}#/courses/#{registration.course.id}"
+      expect(registration_mail.body).to match "https://exam"
     end
   end
 end
