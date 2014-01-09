@@ -17,8 +17,6 @@
 
               {{#if videoUrl}}
                 <a class="subnav__icon" {{bindAttr href=videoUrl}}><i class="fa fa-cloud-download"></i></a>
-              {{else}}
-                {{#link-to 'chapter' this class="subnav__icon"}}<i class="fa fa-cloud-download"></i>{{/link-to}}
               {{/if}}
             </li>
           {{/each}}
