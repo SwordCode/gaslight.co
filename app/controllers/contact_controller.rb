@@ -3,6 +3,7 @@ class ContactController < ApplicationController
   def create
     respond_to do |format|
       if message.process
+        CRM.create_deal(params[:message])
         flash[:success] = "Ok, we've got it!"
         @message = Message.new
         format.html { redirect_to contact_path }
