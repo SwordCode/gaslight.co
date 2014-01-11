@@ -12,6 +12,8 @@ module Gaslight
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.i18n.enforce_available_locales = true
+    I18n.config.enforce_available_locales = true
     config.exceptions_app = self.routes
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
