@@ -15,13 +15,13 @@ bundle exec rspec --format documentation spec
 #
 # Engines
 #
-cd engines/blog_app
-bundle install
-bundle exec rake db:setup RAILS_ENV=test
-bundle exec rspec --format documentation spec
-
-cd engines/training_app
-bundle install
-bundle exec rake db:setup RAILS_ENV=test
-bundle exec rspec --format documentation spec
+# cd engines/blog_app
+# bundle install
+# bundle exec rake db:setup RAILS_ENV=test
+# bundle exec rspec --format documentation spec
+# 
+# cd engines/training_app
+# bundle install
+# bundle exec rake db:setup RAILS_ENV=test
+# bundle exec rspec --format documentation spec
 
