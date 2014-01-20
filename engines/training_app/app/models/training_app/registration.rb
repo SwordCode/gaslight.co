@@ -3,6 +3,7 @@ module TrainingApp
 
     belongs_to :course
     belongs_to :discount_code
+    validates_associated :discount_code
 
     validates_presence_of :name, :email, :course
     validates_uniqueness_of :code

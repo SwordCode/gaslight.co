@@ -66,6 +66,44 @@ module TrainingApp
         end
       end
     end
+
+    describe 'discounted registrations' do
+      let(:discount_code) do
+        DiscountCode.new(price: 100, course: subject.course, code: 'test1')
+      end
+
+      before do
+        subject.course = Course.new
+        subject.name = 'Test Person'
+        subject.email = 'admin@example.com'
+      end
+
+      context 'with no conditions' do
+        it { expect(subject).to be_valid }
+      end
+
+      context 'with a limited number of uses' do
+        before { subject.discount_code = discount_code }
+
+        context 'before the maximum is reached' do
+          before { discount_code.maximum_uses = 2 }
+          it { expect(subject).to be_valid }
+        end
+
+        context 'after the maximum is reached' do
+          before do
+            allow(discount_code).to receive(:remaining_uses).and_return(1)
+            subject.discount_code.maximum_uses = 1
+          end
+
+          it { expect(subject).to_not be_valid }
+        end
+      end
+
+      context 'with an expiration date' do
+
+      end
+    end
   end
 end
 
