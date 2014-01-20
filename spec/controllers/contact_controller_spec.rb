@@ -4,6 +4,7 @@ describe ContactController do
   describe "POST 'create'" do
     context "when valid" do
       before(:each) do
+        CRM.stub(:create_deal).and_return(true)
         post :create, message: { name: 'Chris Moore', email: 'chris@cdmwebs.com', project: 'This is the body', human: 'yes' }
       end
 
