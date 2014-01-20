@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 feature 'Contact Us' do
+  before(:each) { CRM.stub(:create_deal).and_return(true) }
+
   scenario 'via the landing page' do
     contact_us_page.visit_page
     contact_us_page.complete_form
