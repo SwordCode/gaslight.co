@@ -76,6 +76,7 @@ module TrainingApp
         subject.course = Course.new
         subject.name = 'Test Person'
         subject.email = 'admin@example.com'
+        subject.discount_code = discount_code
       end
 
       context 'with no conditions' do
@@ -83,8 +84,6 @@ module TrainingApp
       end
 
       context 'with a limited number of uses' do
-        before { subject.discount_code = discount_code }
-
         context 'before the maximum is reached' do
           before { discount_code.maximum_uses = 2 }
           it { expect(subject).to be_valid }
@@ -101,7 +100,15 @@ module TrainingApp
       end
 
       context 'with an expiration date' do
+        context 'prior to the expiration date' do
+          before { discount_code.expires_on = 1.week.from_now }
+          it { expect(subject).to be_valid }
+        end
 
+        context 'on or after the expiration date' do
+          before { discount_code.expires_on = 1.week.ago }
+          it { expect(subject).to_not be_valid }
+        end
       end
     end
   end
