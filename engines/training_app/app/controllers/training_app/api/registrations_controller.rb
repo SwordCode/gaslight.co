@@ -17,7 +17,7 @@ module TrainingApp
           session[:registration_code] = registration.code
           render json: { registration: registration }, status: :created
         else
-          render json: { registration: registration, error_message: registration.errors.full_messages.to_sentence } , status: :unprocessable_entity
+          render json: { registration: registration, error_message: errors.full_messages.to_sentence } , status: :unprocessable_entity
         end
       end
 
@@ -37,7 +37,12 @@ module TrainingApp
       end
 
       def discount_code
-        @discount_code = DiscountCode.find_by_code(params[:registration][:discount_code])
+        code ||= DiscountCode.find_by_code(params[:registration][:discount_code])
+        @discount_code = code.valid? ? code : nil
+      end
+
+      def errors
+        registration.errors + registration.discount_code.errors
       end
     end
   end

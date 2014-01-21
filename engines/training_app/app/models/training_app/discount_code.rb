@@ -7,6 +7,10 @@ module TrainingApp
     validates :course, :price, :code, presence: true
     validate :has_remaining_uses, :has_not_expired
 
+    def self.search(code, course_id)
+      where(course_id: course_id, code: code)
+    end
+
     def name
       [course.name, code].join(' - ')
     end
