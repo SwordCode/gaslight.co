@@ -132,6 +132,8 @@ ActiveRecord::Schema.define(version: 20140125154740) do
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "maximum_uses", default: 0
+    t.date     "expires_on"
   end
 
   create_table "training_app_discount_requests", force: true do |t|
