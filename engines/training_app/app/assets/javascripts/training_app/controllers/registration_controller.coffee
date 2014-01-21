@@ -24,7 +24,7 @@ Training.CourseRegisterController = Ember.ObjectController.extend
   ).property('card.name', 'card.number', 'card.expMonth', 'card.expYear')
 
   discountCodeURL: (->
-    "/training/api/discount_codes/#{@get('discountCode')}"
+    "/training/api/discount_codes/#{@get('discountCode')}?course_id=#{@get('course.id')}"
   ).property('discountCode')
 
   discountCodeDidChange: (->
