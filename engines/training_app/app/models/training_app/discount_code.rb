@@ -7,6 +7,10 @@ module TrainingApp
     validates :course, :price, :code, presence: true
     validate :has_remaining_uses, :has_not_expired
 
+    def name
+      [course.name, code].join(' - ')
+    end
+
     def uses
       registrations.count
     end
