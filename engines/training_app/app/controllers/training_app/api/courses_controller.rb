@@ -10,7 +10,11 @@ module TrainingApp
       end
 
       def show
-        respond_with(Course.find(params[:id]))
+        respond_with course
+      end
+
+      def course
+        Course.where(id: params[:id]).includes(sections: :chapters).first
       end
     end
   end
