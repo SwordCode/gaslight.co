@@ -13,6 +13,18 @@ ActiveAdmin.register TrainingApp::DiscountCode do
     actions
   end
 
+  form do |f|
+    f.semantic_errors *f.object.errors.keys
+    f.inputs do
+      f.input :course
+      f.input :code
+      f.input :price
+      f.input :maximum_uses, label: 'Maximum Uses', hint: 'Optional. Only allow a code to be used a certain number of times. 0 equals unlimited.'
+      f.input :expires_on, label: 'Expires On', hint: 'Optional. Only allow a code to be used until a certain date.'
+    end
+    f.actions
+  end
+
   controller do
     def permitted_params
       params.permit!
