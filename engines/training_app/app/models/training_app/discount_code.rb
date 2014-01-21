@@ -7,8 +7,12 @@ module TrainingApp
     validates :course, :price, :code, presence: true
     validate :has_remaining_uses, :has_not_expired
 
-    def remaining_uses
+    def uses
       registrations.count
+    end
+
+    def remaining_uses
+      maximum_uses > 0 ? maximum_uses - uses : 100
     end
 
     def expired?
@@ -16,7 +20,7 @@ module TrainingApp
     end
 
     def has_remaining_uses
-      if maximum_uses > 0 && remaining_uses >= maximum_uses
+      if maximum_uses > 0 && remaining_uses <= 0
         errors.add(:maximum_uses, 'has been exceeded')
       end
     end
