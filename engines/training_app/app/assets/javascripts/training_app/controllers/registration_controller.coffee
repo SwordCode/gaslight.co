@@ -68,4 +68,5 @@ Training.CourseRegisterController = Ember.ObjectController.extend
     @set('discountPending', false)
 
   handleDiscountError: (response) ->
+    @set('discountedPrice', @get('course.price'))
     @set('discountPending', false)
