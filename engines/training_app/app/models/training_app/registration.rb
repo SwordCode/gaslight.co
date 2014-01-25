@@ -13,7 +13,12 @@ module TrainingApp
       customer = Customer.generate(token: stripe_token, email: email, name: name)
       self.customer_id = customer.id
       if valid?
-        customer.charge(amount: amount, description: course.title) if amount > 0
+        charge = customer.charge(amount: amount, description: course.title) if amount > 0
+
+        self.card_type = charge.card.type
+        self.last4 = charge.card.last4
+        self.expires_on = Date.new(charge.card.exp_year, charge.card.exp_month, 1)
+
         if customer.error.blank?
           save!
           send_confirmation
