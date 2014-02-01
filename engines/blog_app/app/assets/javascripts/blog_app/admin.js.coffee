@@ -10,6 +10,7 @@
 #= require_self
 
 #= require blog_app/admin/store
+#= require blog_app/admin/router
 #= require_tree ./admin/models
 #= require_tree ./admin/controllers
 #= require_tree ./admin/views
@@ -17,7 +18,6 @@
 #= require_tree ./admin/components
 #= require_tree ./admin/templates
 #= require_tree ./admin/routes
-#= require blog_app/admin/router
 
 marked.setOptions
   smartypants: true
