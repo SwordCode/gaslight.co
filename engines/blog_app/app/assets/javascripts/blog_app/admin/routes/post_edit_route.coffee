@@ -16,3 +16,6 @@ BlogAdmin.PostEditRoute = Ember.Route.extend
     @controller.set('model', model)
     @controllerFor('post').set('isEditable', false)
 
+  deactivate: ->
+    @controllerFor('post').set('isEditable', true)
+
