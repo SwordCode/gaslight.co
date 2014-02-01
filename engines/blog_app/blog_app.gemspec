@@ -32,7 +32,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'rack-rewrite'
   s.add_dependency 'kaminari'
   s.add_dependency 'engagement'
-  s.add_dependency "active_model_serializers"
+  s.add_dependency 'active_model_serializers'
+  s.add_dependency 'bootstrap-sass'
 
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'

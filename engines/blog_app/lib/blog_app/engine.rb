@@ -9,6 +9,7 @@ require "pygments"
 require "kaminari"
 require "jquery-rails"
 require "backbone-rails"
+require "bootstrap-sass"
 
 module BlogApp
   class Engine < ::Rails::Engine

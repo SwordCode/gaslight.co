@@ -7,7 +7,7 @@ module BlogApp
     before_filter :old_post?, only: :show
 
     expose(:posts) { Post.published.by_publish_date }
-    expose(:post) { params[:id].present? ? Post.find(params[:id]) : Post.slugged(params[:slug]) }
+    expose(:post) { Post.slugged(params[:id]) }
     expose(:popular_tags) { Post.tag_counts.order('count desc').limit(20) }
     expose(:authors) { Post.authors }
     expose(:author) { Author.find_by_tumblr(params[:author].to_s.downcase) }
