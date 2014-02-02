@@ -33,3 +33,14 @@ window.BlogAdmin = BlogAdmin = Ember.Application.create
       parsedName.fullNameWithoutType = BlogAdmin.templateNamespace + '/' + parsedName.fullNameWithoutType
       parsedName.name = BlogAdmin.templateNamespace + '/' + parsedName.name
       @_super(parsedName)
+
+
+Em.Route.reopen
+  activate: ->
+    @_super()
+    document.title = @routeName.split('.').map((v) ->
+      v.split('-').map((vv) ->
+        vv.capitalize()
+      ).join(' ')
+    ).join(' – ') + ' | Gaslight'
+
