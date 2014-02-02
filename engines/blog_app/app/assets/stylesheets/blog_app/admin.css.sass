@@ -1,4 +1,5 @@
 @import bootstrap
+@import bootstrap/theme
 @import highlight/styles/tomorrow-night-bright
 
 pre
@@ -16,13 +17,11 @@ html, body, body > .ember-view
   height: 100%
   overflow: hidden
 
-body > .ember-view > .container
+body > .ember-view > .container-fluid
   height: 100%
   padding: 61px 15px 0 15px
 
-.container
-  width: 100%
-  max-width: 1400px
+.container-fluid
   & > .row
     height: 100%
 
@@ -40,6 +39,8 @@ body, h1, h2, h3, h4, h5, h6, p
 .post_list
   @extend .col-md-3
   @extend .list-group
+  box-shadow: none
+  -webkit-box-shadow: none
   height: 100%
   overflow-y: scroll
   overflow-x: hidden
@@ -69,6 +70,8 @@ body, h1, h2, h3, h4, h5, h6, p
   @extend .col-md-9
   height: 100%
   overflow-y: scroll
+  padding-top: 1.5rem
+  padding-bottom: 2rem
   .post__title
     max-width: 100%
     margin-top: 0
