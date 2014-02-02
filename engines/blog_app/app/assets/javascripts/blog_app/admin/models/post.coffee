@@ -1,4 +1,6 @@
 BlogAdmin.Post = DS.Model.extend
+  isEditable: true
+
   title: DS.attr('string')
   description: DS.attr('string')
   body: DS.attr('string')
@@ -20,4 +22,7 @@ BlogAdmin.Post = DS.Model.extend
     !!@get('publishedAt')
   ).property('publishedAt')
 
-  isEditable: true
+  hasMarkdown: (->
+    !!@get('body')
+  ).property('body')
+

@@ -11,7 +11,12 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active">{{#link-to 'posts'}}Posts{{/link-to}}</li>
+        {{#link-to 'posts' currentWhen='posts.index' tagName='li'}}
+          <a {{bind-attr href='view.href'}}>Posts</a>
+        {{/link-to}}
+        {{#link-to 'posts.new' currentWhen='posts.new' tagName='li'}}
+          <a {{bind-attr href='view.href'}}>New Post</a>
+        {{/link-to}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/blog">Live Blog</a></li>

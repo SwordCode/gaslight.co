@@ -7,7 +7,7 @@ module BlogApp
 
       before_filter :old_post?, only: :show
 
-      expose(:posts)        { Post.published.by_publish_date                                             }
+      expose(:posts)        { Post.order('created_at desc')                                              }
       expose(:post)         { Post.find_by_id(params[:id]) || Post.slugged(params[:id] || params[:slug]) }
 
       def index
@@ -16,6 +16,11 @@ module BlogApp
       end
 
       def show
+        respond_with post
+      end
+
+      def create
+        self.post = Post.create(post_params)
         respond_with post
       end
 

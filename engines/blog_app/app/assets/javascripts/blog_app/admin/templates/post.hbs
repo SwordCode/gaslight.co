@@ -5,5 +5,7 @@
   {{/if}}
 </h1>
 <div class="post__body">
-  {{format-markdown body}}
+  {{#if hasMarkdown}}
+    {{format-markdown body}}
+  {{/if}}
 </div>

@@ -47,7 +47,7 @@ module BlogApp
     end
 
     def self.slugged(slug)
-      published.find_by_slug(slug)
+      find_by_slug(slug)
     end
 
     validates_presence_of :title, :body, :author
