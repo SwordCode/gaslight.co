@@ -1,10 +1,20 @@
 <div class="row">
   <div class="post_list">
     {{#each post in content}}
-      {{#link-to 'post' post currentWhen="post" classNames="post list-group-item"}}
-        <img class="post__author_image" {{bindAttr src=post.sizedAuthorImage}} />
-        <h4 class="list-group-item-heading post__title">{{post.title}}</h4>
-        <p class="list-group-item-text post__description">{{post.description}}</p>
+      {{#link-to 'post' post currentWhen="post" class="post list-group-item" classNameBindings=post.isPublished}}
+        <div class="row">
+          <div class="col-md-9">
+            <h4 class="list-group-item-heading post__title">{{post.title}}</h4>
+          </div>
+          <div class="col-md-3">
+            <img class="post__author_image" {{bindAttr src=post.sizedAuthorImage}} />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="list-group-item-text post__description">{{post.description}}</p>
+          </div>
+        </div>
       {{/link-to}}
     {{/each}}
   </div>
