@@ -30,5 +30,9 @@ module BlogApp
         end
       end
     end
+
+    initializer "blog_app.assets.precompile" do |app|
+      app.config.assets.precompile += %w(blog_app/admin.css)
+    end
   end
 end
