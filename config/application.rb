@@ -35,7 +35,7 @@ module Gaslight
       }
 
       r301 %r{.*}, 'http://gaslight.co$&', if: Proc.new { |rack_env|
-        rack_env['SERVER_NAME'] =~ /^(www.)?gaslightsoftware.com/
+        rack_env['SERVER_NAME'] =~ /^(www.)?gaslightsoftware.com|www.gaslight.co/
       }
 
       blog_domains = %w[ blog.gaslightsoftware.com blog.gaslight.co ]
