@@ -18,7 +18,12 @@ BlogAdmin.Post = DS.Model.extend
     "#{@get('authorImage')}?s=64x64" if @get('authorImage')?
   ).property('authorImage')
 
-  isPublished: (->
+  published: ((key, value) ->
+    if arguments.length > 1
+      if value == true
+        @set('published_at', new Date().toISOString())
+      else
+        @set('published_at', null)
     !!@get('publishedAt')
   ).property('publishedAt')
 

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="post_list">
     {{#each post in content}}
-      {{#link-to 'post' post currentWhen="post" class="post list-group-item" classNameBindings=post.isPublished}}
+      {{#link-to 'post' post currentWhen="post" class="post list-group-item" classNameBindings=post.published}}
         <div class="row">
           <div class="col-md-9">
             <h4 class="list-group-item-heading post__title">{{post.title}}</h4>
