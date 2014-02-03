@@ -75,3 +75,27 @@
         .about--happy
           =image_tag "icons/g-day.svg", :class => "icon"
         %h1.subheading.center G-Day Celebrations
+  / Begin MailChimp Signup Form
+  #mc_embed_signup
+    %section#main.newsletter_body
+      .row
+        .large-6.columns.large-centered
+          %form#mc-embedded-subscribe-form.validate{:action => "http://gaslight.us4.list-manage.com/subscribe/post?u=8c64d42f5af77dfcaa8d23c71&amp;id=5fb0f9234f", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+            %h2.newsletter_headline The Gaslight Newsletter
+            %div.underline--red
+            %p.center We don’t like to sit still. Keep up with us in our monthly email newsletter. It’s full of tech tips, news and happenings.
+            .row
+              .large-8.columns
+                .mc-field-group
+                  %label.input_label_newsletter{:for => "mce-EMAIL"} 
+                  %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Email Address"}
+                #mce-responses.clear
+                  #mce-error-response.response{:style => "display:none"}
+                  #mce-success-response.response{:style => "display:none"}
+                / real people should not fill this in and expect good things - do not remove this or risk form bot signups
+                %div{:style => "position: absolute; left: -5000px;"}
+                  %input{:name => "b_8c64d42f5af77dfcaa8d23c71_5fb0f9234f", :type => "text", :value => ""}
+              .large-4.columns
+                .clear
+                  %input#mc-embedded-subscribe.button.button--brand3.button--form{:name => "subscribe", :type => "submit", :value => "Subscribe"}
+  / End mc_embed_signup
