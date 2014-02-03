@@ -88,6 +88,29 @@
 
   .footer__contact
     margin-bottom: 5px
+@media only screen and (max-width: 767px)
+  ul.photos li
+    width: 48%
+    margin: 0 2% 80px 0
+    h3
+      line-height: 1.1em
+      color: #000
+      font-weight: bold
+      font-size: 1em
+    p
+      color: #000
+      line-height: 1.2em
+    .photo
+      overflow: visible
+      margin-bottom: 8px
+      .overlay
+        height: 20%
+        top: 100%
+        background: #fff
+      .links
+        top: 14px
+    &:hover .overlay
+      top: 100%
 
 //iPad and down
 @media only screen and (max-width : 1024px)
