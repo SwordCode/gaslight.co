@@ -8,6 +8,24 @@ describe "URL Rewriting" do
     end
   end
 
+  context 'www subdomain to root' do
+    let(:host) { 'www.gaslight.co' }
+
+    it 'redirects to root' do
+      get "http://#{host}"
+      response.response_code.should eq(301)
+      response.location.should eq('http://gaslight.co/')
+    end
+
+    it 'redirects to root' do
+      get "https://#{host}"
+      response.response_code.should eq(301)
+      response.location.should eq('https://gaslight.co/')
+    end
+
+
+  end
+
   context "old blogs" do
     context 'blog.gaslight.co' do
       let(:host) { 'blog.gaslight.co' }

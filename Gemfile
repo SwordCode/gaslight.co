@@ -9,7 +9,7 @@ gem 'haml', '~> 4.0'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'rails-backbone'
-gem 'rack-rewrite'
+gem 'rack-rewrite', require: false
 gem 'pg'
 gem 'decent_exposure'
 gem 'rack-cors', require: 'rack/cors'
