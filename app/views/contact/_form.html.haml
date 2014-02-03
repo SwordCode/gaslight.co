@@ -7,5 +7,6 @@
   = f.text_area :timeline, label: 'Do you have a timeline or deadline?'
   = f.select(:budget, ['40k to 100k', '100k to 250k', 'More than 250k'], {include_blank: "What's your budget?"})
   = f.text_field :human, label: 'Are you a human? Just say yes if so.'
+  = f.checkbox :newsletter, label: 'Sign up for our monthly newsletter.'
   = f.button 'Send it!', class: 'button button--brand3', data: { disable_with: 'Submitting...' }
 
