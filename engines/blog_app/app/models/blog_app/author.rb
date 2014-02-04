@@ -231,7 +231,10 @@ module BlogApp
             "first_name":"Michelle",
             "email":"michelle@michelletaute.com",
             "twitter":"michelletaute",
-            "google_plus":"https://plus.google.com/115777009394983974443/posts"
+            "google_plus":"https://plus.google.com/115777009394983974443/posts",
+            "github": "",
+            "avatar": "",
+            "tumblr": "michelletaute"
           }
         ]
       }').with_indifferent_access
