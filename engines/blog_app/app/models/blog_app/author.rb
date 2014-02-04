@@ -224,6 +224,14 @@ module BlogApp
             "tumblr": "ryanfinke",
             "google_plus": "https://plus.google.com/+RyanFinke",
             "email": "finke@gaslight.co"
+          },
+          {
+            "id": 31,
+            "name":"Michelle Taute",
+            "first_name":"Michelle",
+            "email":"michelle@michelletaute.com",
+            "twitter":"michelletaute",
+            "google_plus":"https://plus.google.com/115777009394983974443/posts"
           }
         ]
       }').with_indifferent_access
