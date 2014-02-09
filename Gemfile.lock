@@ -233,6 +233,7 @@ GEM
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
     fssm (0.2.10)
+    geocoder (1.1.9)
     hacker_news_search (0.0.7)
       faraday (~> 0.8.4)
       faraday_middleware (~> 0.8.4)
@@ -451,6 +452,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   foundation_rails_helper!
+  geocoder
   haml (~> 4.0)
   haml-rails
   high_voltage

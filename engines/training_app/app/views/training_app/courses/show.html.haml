@@ -1,5 +1,15 @@
 = content_for(:title) { "#{course.title} | #{course.venue_city}" }
-
+= content_for(:javascript) do
+  = javascript_include_tag "//maps.google.com/maps/api/js?sensor=false"
+  = javascript_include_tag "mxn.js?(googlev3)"
+  :javascript
+    var map = new mxn.Mapstraction('map-panel', 'googlev3');
+    var latlon = new mxn.LatLonPoint('#{course.venue.latitude}', '#{course.venue.longitude}');
+    map.addMarkerWithData( new mxn.Marker( latlon), {
+      infoBubble : "#{course.venue.name}"
+    });
+    map.addControls({pan: true, scale: true, zoom: "small"});
+    map.setCenterAndZoom(latlon, 15);
 #main
   .row
     .large-12.columns
@@ -29,6 +39,8 @@
             = course.venue_city
             %span= number_to_currency(course.current_price, precision: 0)
           %h5.purchase-panel__date= course.date_range
+          %h5= course.venue.name
+          #map-panel
           %a.purchase-panel__buy.button.button--brand1{href: course.registration_link} Register Now
       - if course.in_person?
         .request
