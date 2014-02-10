@@ -8,6 +8,8 @@ require "compass-rails"
 require "font-awesome-rails"
 require "ember-rails"
 require "zurb-foundation"
+require "geocoder"
+require "leaflet-rails"
 
 module TrainingApp
   class Engine < ::Rails::Engine

@@ -30,6 +30,8 @@ Gem::Specification.new do |s|
   s.add_dependency "active_model_serializers"
   s.add_dependency "redcarpet"
   s.add_dependency "zurb-foundation", '~> 4.0'
+  s.add_dependency "geocoder"
+  s.add_dependency "leaflet-rails"
 
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'

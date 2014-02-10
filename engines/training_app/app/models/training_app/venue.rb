@@ -3,6 +3,9 @@ module TrainingApp
     #attr_accessible :name, :address, :city, :blurb
     has_many :courses
 
+    geocoded_by :address
+    after_validation :geocode
+    
     before_validation :normalize_address
     validates :address, uniqueness: true, presence: true
 
