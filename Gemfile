@@ -22,7 +22,6 @@ gem 'sentry-raven', git: 'https://github.com/getsentry/raven-ruby.git'
 gem 'compass-rails', '1.1.0.pre'
 gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'pipedrive-ruby',      github: 'GeneralScripting/pipedrive-ruby'
-gem 'geocoder'
 
 # Gems used only for assets and not required
 # in production environments by default.
