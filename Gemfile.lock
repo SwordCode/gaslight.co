@@ -80,6 +80,7 @@ PATH
       geocoder
       haml (~> 4.0)
       haml-rails
+      leaflet-rails
       rails (~> 4.0.0)
       redcarpet
       sass-rails (~> 4.0.0)
@@ -277,6 +278,7 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
+    leaflet-rails (0.7.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
