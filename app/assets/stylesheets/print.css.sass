@@ -1,0 +1,72 @@
+@import variables
+@import compass
+@import foundation_overrides
+@import normalize
+
+@import foundation/components/global
+@import foundation/components/grid
+@import foundation/components/visibility
+@import foundation/components/block-grid
+@import foundation/components/type
+@import foundation/components/pagination
+@import foundation/components/tables
+
+@import "mixins"
+@import "fonts"
+@import "layout"
+@import "type"
+@import "forms"
+@import "sprites"
+@import "buttons"
+@import "components"
+@import "table"
+@import "main"
+@import "training_app/body"
+
+body
+  margin: 2em auto
+table thead tr
+  border-bottom: 1px solid #ccc
+  th
+    font-weight: bold
+    background-color: #333
+    padding-top: 10px
+    text-align: right
+    &:first-child
+      text-align: left
+table tbody tr
+  border-bottom: 1px solid #ccc
+  td
+    text-align: right
+    &:first-child
+      text-align: left
+.row
+  max-width: 800px
+  margin-bottom: 2em
+
+.large-6
+  width: 50%
+.large-4
+  width: 33%
+.large-12
+  width: 100%
+
+img
+  height: 40px
+  margin-bottom: 0.5em
+
+.purchased-on
+  margin-top: 10px 
+
+.notes
+  border: 1px solid #ccc
+  padding-top: 1em
+  background-color: #eee
+  h3
+    padding-bottom: 5px
+    margin-bottom: 0.5em
+
+.payment-info
+  border-bottom: 1px solid #ccc
+  padding-bottom: 5px
+  margin-bottom: 0.5em
