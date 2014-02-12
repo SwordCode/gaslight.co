@@ -6,7 +6,7 @@ BlogAdmin.Post = DS.Model.extend
   body: DS.attr('string')
   slug: DS.attr('string')
   audio_url: DS.attr('string')
-  author: DS.attr('string')
+  author: DS.belongsTo('author')
   author_image: DS.attr('string')
   published_at: DS.attr('string')
 

@@ -1,0 +1,7 @@
+<h1 class="post__title">{{title}}</h1>
+<div class="post__body">
+  {{#if hasMarkdown}}
+    {{format-markdown body}}
+  {{/if}}
+</div>
+{{outlet}}

@@ -14,7 +14,8 @@ BlogApp::Engine.routes.draw do
   end
 
   namespace :api do
-    resources :posts, controller: 'posts', format: 'json'
+    resources :posts
+    resources :authors
     match '/posts/:id', action: :options, controller: 'blog_app/posts', via: :options
   end
 

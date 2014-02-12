@@ -12,10 +12,6 @@ module BlogApp
       people.sort_by(&:tumblr)
     end
 
-    def id
-      tumblr
-    end
-
     def display_name
       tumblr
     end
@@ -30,7 +26,9 @@ module BlogApp
 
     def as_json(*)
       {
+        id: id,
         tumblr: tumblr,
+        login: tumblr,
         external_comments_count: external_comments_count,
         contributions: contributions,
       }

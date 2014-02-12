@@ -1,21 +1,14 @@
 BlogAdmin.PostEditRoute = Ember.Route.extend
+  authors: ['cdmwebs', 'joelturnbull']
+
   model: ->
     @modelFor('post')
 
-  renderTemplate: ->
-    @render 'post.edit', into: 'posts'
-
   actions:
     savePost: (post) ->
-      post.save().then(@redirectToPost.bind(this))
-
-  redirectToPost: ->
-    @transitionTo('post.index', this)
+      post.save()
 
   setupController: (controller, model) ->
-    @controller.set('model', model)
-    @controllerFor('post').set('isEditable', false)
-
-  deactivate: ->
-    @controllerFor('post').set('isEditable', true)
+    controller.set('model', model)
+    controller.set('authors', @authors)
 

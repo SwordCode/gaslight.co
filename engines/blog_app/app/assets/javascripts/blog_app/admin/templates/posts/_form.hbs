@@ -1,10 +1,13 @@
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#edit" data-toggle="tab">Edit</a></li>
-  <li><a href="#preview" data-toggle="tab">Preview</a></li>
+  <li class="active"><a href="#preview" data-toggle="tab">Preview</a></li>
+  <li><a href="#edit" data-toggle="tab">Edit</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="edit">
+  <div class="tab-pane active" id="preview">
+    {{partial 'post'}}
+  </div>
+  <div class="tab-pane" id="edit">
     <form role="form">
       <div class="form-group">
         {{input class="form-control input-lg" placeholder="Title" value=title}}
@@ -18,7 +21,7 @@
       <div class="form-group">
         <div class="row">
           <div class="col-xs-3">
-            {{input class="form-control input-sm" placeholder="Author" value=author}}
+            {{view Ember.Select content=authors value=post.author.login class="form-control"}}
           </div>
           <div class="col-xs-5">
             {{input class="form-control input-sm" placeholder="Slug" value=slug}}
@@ -43,10 +46,6 @@
 
       <button class="btn btn-primary" {{action 'savePost' this}}>Save</button>
     </form>
-  </div>
-
-  <div class="tab-pane" id="preview">
-    {{render 'post' this}}
   </div>
 </div>
 
