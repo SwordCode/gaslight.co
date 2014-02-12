@@ -5,7 +5,13 @@ module TrainingApp
 
       def create
         registration = Registration.new(registration_params)
-        price = discounted? ? discount_code.price : registration.course.price
+
+        if discounted?
+          registration.discount_code = discount_code
+          price = discount_code.price
+        else
+          price = registration.course.price
+        end
 
         if registration.purchase!(price)
           session[:registration_code] = registration.code

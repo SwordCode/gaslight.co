@@ -33,6 +33,7 @@ feature "Purchasing an online course", js: true do
       registration_page.submit_form()
       expect(registration_page).to be_successful
       expect(last_registration.amount).to eq(100)
+      expect(last_registration.discount_code).to_not be_nil
     end
   end
 

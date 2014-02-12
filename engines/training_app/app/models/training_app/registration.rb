@@ -2,6 +2,7 @@ module TrainingApp
   class Registration < ActiveRecord::Base
 
     belongs_to :course
+    belongs_to :discount_code
 
     validates_presence_of :name, :email, :course
     validates_uniqueness_of :code
