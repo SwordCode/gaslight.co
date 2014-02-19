@@ -6,4 +6,3 @@ require File.expand_path('../config/application', __FILE__)
 
 Gaslight::Application.load_tasks
 
-task :default => ['spec', 'konacha:run']
