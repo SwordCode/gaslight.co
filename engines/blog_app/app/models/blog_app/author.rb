@@ -235,6 +235,17 @@ module BlogApp
             "github": "",
             "avatar": "",
             "tumblr": "michelletaute"
+          },
+          {
+            "id": 32,
+            "name":"Merrilee Luke-Ebbeler",
+            "first_name":"Merrilee",
+            "email":"merrilee@gaslight.com",
+            "twitter":"fstopper68",
+            "google_plus":"https://plus.google.com/u/1/107673328176770950728",
+            "github": "merrilee",
+            "avatar": "",
+            "tumblr": ""
           }
         ]
       }').with_indifferent_access
