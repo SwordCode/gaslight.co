@@ -245,7 +245,7 @@ module BlogApp
             "google_plus":"https://plus.google.com/u/1/107673328176770950728",
             "github": "merrilee",
             "avatar": "",
-            "tumblr": ""
+            "tumblr": "merrilee"
           }
         ]
       }').with_indifferent_access
