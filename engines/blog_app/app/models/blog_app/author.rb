@@ -240,7 +240,7 @@ module BlogApp
             "id": 32,
             "name":"Merrilee Luke-Ebbeler",
             "first_name":"Merrilee",
-            "email":"merrilee@gaslight.com",
+            "email":"merrilee@gaslight.co",
             "twitter":"fstopper68",
             "google_plus":"https://plus.google.com/u/1/107673328176770950728",
             "github": "merrilee",
