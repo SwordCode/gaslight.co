@@ -17,6 +17,7 @@ Gaslight::Application.routes.draw do
   resource :office_hours, controller: :office_hours, path: '/office-hours', only: [:create, :new]
 
   get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: "xml" }
+  get 'robots.txt' => 'robots#index', as: 'robots', defaults: { format: "txt" }
 
   get 'about', to: 'pages#about'
   root to: 'pages#show', id: 'home'
