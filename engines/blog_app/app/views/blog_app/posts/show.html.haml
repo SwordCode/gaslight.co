@@ -18,7 +18,8 @@
       shareView = new Blog.Views.ShareView({
         shareUrl: window.location,
         targetEl: $('.post'),
-        viewportEl: $(window)
+        viewportEl: $(window),
+        subreddit: "#{post.subreddit}"
       });
       $('body').append(shareView.render().el)
 

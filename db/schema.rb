@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140125154740) do
+ActiveRecord::Schema.define(version: 20140328184400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -28,8 +27,8 @@ ActiveRecord::Schema.define(version: 20140125154740) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -61,11 +60,12 @@ ActiveRecord::Schema.define(version: 20140125154740) do
     t.text     "body"
     t.text     "html"
     t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "audio_url"
     t.text     "description"
     t.integer  "external_comments_count", default: 0
+    t.string   "subreddit"
   end
 
   add_index "blog_app_posts", ["slug"], name: "index_blog_app_posts_on_slug", using: :btree
@@ -163,10 +163,10 @@ ActiveRecord::Schema.define(version: 20140125154740) do
     t.integer  "course_id"
     t.string   "referral_token"
     t.string   "code"
-    t.integer  "discount_code_id"
     t.string   "last4"
     t.string   "card_type"
     t.date     "expires_on"
+    t.integer  "discount_code_id"
   end
 
   create_table "training_app_sections", force: true do |t|
