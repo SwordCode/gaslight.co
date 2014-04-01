@@ -222,6 +222,28 @@ module BlogApp
             "tumblr": "ryanfinke",
             "google_plus": "https://plus.google.com/+RyanFinke",
             "email": "finke@gaslight.co"
+          },
+          {
+            "id": 31,
+            "name":"Michelle Taute",
+            "first_name":"Michelle",
+            "email":"michelle@michelletaute.com",
+            "twitter":"michelletaute",
+            "google_plus":"https://plus.google.com/115777009394983974443/posts",
+            "github": "",
+            "avatar": "",
+            "tumblr": "michelletaute"
+          },
+          {
+            "id": 32,
+            "name":"Merrilee Luke-Ebbeler",
+            "first_name":"Merrilee",
+            "email":"merrilee@gaslight.co",
+            "twitter":"fstopper68",
+            "google_plus":"https://plus.google.com/u/1/107673328176770950728",
+            "github": "merrilee",
+            "avatar": "",
+            "tumblr": "merrilee"
           }
         ]
       }').with_indifferent_access
