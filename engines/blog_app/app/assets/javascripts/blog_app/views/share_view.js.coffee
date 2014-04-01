@@ -13,6 +13,7 @@ class Blog.Views.ShareView extends Backbone.View
     @targetEl = $(options.targetEl)
     @viewportEl = $(options.viewportEl)
     @viewportEl.on 'scroll', => @handleScroll()
+    @subreddit = options.subreddit
     super
 
   handleScroll: ->
