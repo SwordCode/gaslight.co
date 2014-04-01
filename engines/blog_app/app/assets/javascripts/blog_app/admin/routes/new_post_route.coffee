@@ -1,4 +1,4 @@
-BlogAdmin.PostsNewRoute = Ember.Route.extend
+BlogAdmin.PostsNewRoute = Ember.DSModelRoute.extend
   model: ->
     @store.createRecord('post')
 
