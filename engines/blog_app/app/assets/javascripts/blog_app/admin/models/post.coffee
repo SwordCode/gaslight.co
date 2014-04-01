@@ -9,6 +9,7 @@ BlogAdmin.Post = DS.Model.extend
   author: DS.belongsTo('author')
   author_image: DS.attr('string')
   published_at: DS.attr('string')
+  subreddit: DS.attr('string')
 
   publishedAt: Ember.computed.alias('published_at')
   authorImage: Ember.computed.alias('author_image')

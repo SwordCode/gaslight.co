@@ -88,7 +88,7 @@ module BlogApp
     end
 
     def post_params
-      params.require(:post).permit(:title, :description, :body, :slug, :audio_url, :author, :published_at)
+      params.require(:post).permit(:title, :description, :body, :slug, :audio_url, :author, :published_at,:author_image,:subreddit)
     end
   end
 end

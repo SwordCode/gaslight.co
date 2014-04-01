@@ -1,7 +1,7 @@
 module BlogApp
   class PostSerializer < ActiveModel::Serializer
     attributes :id, :title, :slug, :audio_url, :author, :author_image,
-      :published_at, :description, :body
+      :published_at, :description, :body, :subreddit
 
     def author_image
       return "" if object.author_email.nil?

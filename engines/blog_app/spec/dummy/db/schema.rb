@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030190158) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20140328184400) do
 
   create_table "blog_app_alias_tags", id: false, force: true do |t|
     t.integer "tag_id"
@@ -47,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131030190158) do
     t.string   "audio_url"
     t.text     "description"
     t.integer  "external_comments_count", default: 0
+    t.string   "subreddit"
   end
 
   add_index "blog_app_posts", ["slug"], name: "index_blog_app_posts_on_slug", using: :btree
