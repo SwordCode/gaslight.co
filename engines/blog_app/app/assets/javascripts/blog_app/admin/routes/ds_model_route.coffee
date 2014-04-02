@@ -8,5 +8,5 @@ Ember.DSModelRoute = Ember.Route.extend
   actions: 
     willTransition: (transition) ->
       model = this.get 'controller.model' 
-      if ((model.get 'isDirty')  && !confirm('You have unsaved changes. They will be lost if you continue!'))
+      if ((model.get 'wasEdited')  && !confirm('You have unsaved changes. They will be lost if you continue!'))
         transition.abort()
