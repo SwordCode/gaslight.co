@@ -246,6 +246,17 @@ module BlogApp
             "github": "merrilee",
             "avatar": "",
             "tumblr": "merrilee"
+          },
+          {
+            "id": 33,
+            "name":"Alan Audette",
+            "first_name":"Alan",
+            "email":"alan@gaslight.co",
+            "twitter":"alanaudette",
+            "google_plus":"https://plus.google.com/u/1/107384316142189794166",
+            "github": "aaudette",
+            "avatar": "",
+            "tumblr": "aaudette"
           }
         ]
       }').with_indifferent_access
