@@ -24,17 +24,9 @@ The Ruby on Rails application that powers [gaslight.co][gco].
 
 ## Deploy
 
-1. You'll need access to gaslight.herokuapp.com. You can add yourself as
-   a collaborator using the credentials in the accounts spreadsheet.
-1. `git remote add production git@heroku.com:gaslight.git`
-1. `git push production master`
+Chris Moore on 4-23-14:
 
-Assets are pushed to S3 and deployed to CloudFront on deploy. You don't
-need to do anything special.
-
-## CI
-
-We're using [Travis][tci].
+I just switched the gaslight.co repo from Travis to our codeship account and set up deployment. If you push to master and the build is successful, it will auto-deploy to heroku.
 
 ## Issues
 
