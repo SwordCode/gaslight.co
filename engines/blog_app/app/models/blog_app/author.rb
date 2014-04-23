@@ -257,6 +257,17 @@ module BlogApp
             "github": "aaudette",
             "avatar": "",
             "tumblr": "aaudette"
+          },
+          {
+            "id": 34,
+            "name":"Jim Anders",
+            "first_name":"Jim",
+            "email":"jim@gaslight.co",
+            "twitter":"janders223",
+            "google_plus":"https://plus.google.com/+JimAnders",
+            "github": "janders223",
+            "avatar": "",
+            "tumblr": "janders223"
           }
         ]
       }').with_indifferent_access
