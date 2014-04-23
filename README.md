@@ -1,7 +1,7 @@
 # gaslight.co
 
 [![Code Climate](https://codeclimate.com/github/gaslight/gaslight.co.png)](https://codeclimate.com/github/gaslight/gaslight.co)
-[![Build Status](https://travis-ci.org/gaslight/gaslight.co.png?branch=master)](https://travis-ci.org/gaslight/gaslight.co)
+[ ![Build Status](https://www.codeship.io/projects/13019560-ad1d-0131-417e-5aebfd02d0b2/status?branch=master)](https://www.codeship.io/projects/19550)
 
 The Ruby on Rails application that powers [gaslight.co][gco].
 
