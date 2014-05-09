@@ -13,7 +13,7 @@ gem 'rack-rewrite', require: false
 gem 'pg'
 gem 'decent_exposure'
 gem 'rack-cors', require: 'rack/cors'
-gem 'training_app', path: '../training_app'
+gem 'gaslight_training', require: 'training_app', git: 'https://github.com/gaslight/training.git'
 gem 'blog_app', path: 'engines/blog_app'
 
 gem 'foundation_rails_helper', github: 'sgruhier/foundation_rails_helper', ref: 'ed5b2903'

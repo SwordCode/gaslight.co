@@ -36,19 +36,10 @@ GIT
       railties (>= 3.0)
 
 GIT
-  remote: https://github.com/getsentry/raven-ruby.git
-  revision: d1e1127d98b47710524b10d5c725e7012c7862be
+  remote: https://github.com/gaslight/training.git
+  revision: 78ff2a1656b2d7876750c918e14050cbbd6571ff
   specs:
-    sentry-raven (0.3)
-      faraday (~> 0.8.0.rc2)
-      hashie
-      multi_json (~> 1.0)
-      uuidtools
-
-PATH
-  remote: ../training_app
-  specs:
-    training_app (0.0.1)
+    gaslight_training (0.0.1)
       active_model_serializers
       compass-rails (= 1.1.0.pre)
       decent_exposure
@@ -57,14 +48,22 @@ PATH
       ember-source (~> 1.2.0)
       font-awesome-rails
       geocoder
-      haml (~> 4.0)
-      haml-rails
       leaflet-rails
       rails (~> 4.0.0)
       redcarpet
       sass-rails (~> 4.0.0)
       stripe
       zurb-foundation (~> 4.0)
+
+GIT
+  remote: https://github.com/getsentry/raven-ruby.git
+  revision: d1e1127d98b47710524b10d5c725e7012c7862be
+  specs:
+    sentry-raven (0.3)
+      faraday (~> 0.8.0.rc2)
+      hashie
+      multi_json (~> 1.0)
+      uuidtools
 
 PATH
   remote: engines/blog_app
@@ -183,19 +182,19 @@ GEM
       execjs
     eco-source (1.1.0.rc.1)
     ejs (1.0.0)
-    ember-data-source (0.14)
+    ember-data-source (1.0.0.beta.7)
       ember-source
-    ember-rails (0.14.1)
+    ember-rails (0.15.0)
       active_model_serializers
       barber (>= 0.4.1)
-      ember-data-source
-      ember-source
+      ember-data-source (>= 1.0.0.beta.5)
+      ember-source (>= 1.1.0)
       execjs (>= 1.2)
-      handlebars-source
+      handlebars-source (> 1.0.0)
       jquery-rails (>= 1.0.17)
       railties (>= 3.1)
-    ember-source (1.2.0.1)
-      handlebars-source (~> 1.1.2)
+    ember-source (1.2.2)
+      handlebars-source (= 1.1.1)
     engagement (1.1.0)
       disqus
       hacker_news_search (~> 0.0.6)
@@ -229,13 +228,13 @@ GEM
       net-ssh (>= 2.1.3)
       nokogiri (~> 1.5)
       ruby-hmac
-    font-awesome-rails (4.0.3.1)
+    font-awesome-rails (4.0.3.2)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
     fssm (0.2.10)
-    geocoder (1.1.9)
+    geocoder (1.2.0)
     hacker_news_search (0.0.7)
       faraday (~> 0.8.4)
       faraday_middleware (~> 0.8.4)
@@ -249,7 +248,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
-    handlebars-source (1.1.2)
+    handlebars-source (1.1.1)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -401,7 +400,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     stringex (2.1.2)
-    stripe (1.10.1)
+    stripe (1.11.0)
       json (~> 1.8.1)
       mime-types (~> 1.25)
       rest-client (~> 1.4)
@@ -455,6 +454,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   foundation_rails_helper!
+  gaslight_training!
   haml (~> 4.0)
   haml-rails
   high_voltage
@@ -477,6 +477,5 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   timecop
-  training_app!
   uglifier (~> 2.1.0)
   zurb-foundation (~> 4.0)
