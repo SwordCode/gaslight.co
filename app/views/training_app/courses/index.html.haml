@@ -1,0 +1,38 @@
+- content_for(:title) { "JavaScript and Ruby on Rails Training from Gaslight | Cincinnati, OH" }
+
+#main.content.with-photo
+  %section.header--training
+    .row
+      .large-12.columns
+        %h1.title--light Build Great Things Faster
+    .row
+      .large-12.columns
+        %h3.subheading--light Master the latest tools for developers with in-person and online training.
+        .underline--blue.underline--header
+
+  - if upcoming_courses.any?
+    %section
+      .row
+        %h2.heading Active Workshops
+        .underline--blue
+      - upcoming_courses.in_groups_of(2, false).each do |courses|
+        .row
+          = render partial: 'course_tile', collection: courses, as: :course
+
+  %section.section--contrast
+    .row
+      %h2.heading Custom Training Sessions
+      .underline--blue
+    .row.center
+      .large-8.columns.large-centered
+        %p.lead We can bring any workshop or class listed above right to your door. Or create a custom, hands-on training session tailored to your needs.
+        %a{href: "mailto:training@gaslight.co", rel: "Training Contact"} Let’s talk about a training session to move your team forward.
+
+  - if previous_courses.any?
+    %section
+      .row
+        %h2.heading Previous Workshops
+        .underline--blue
+      - previous_courses.in_groups_of(2, false).each do |courses|
+        .row
+          = render partial: 'course_tile', collection: courses, as: :course

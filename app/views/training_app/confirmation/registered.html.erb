@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>Here's your personal link to <a href="<%= @registration_link %>">view the course</a>.</p>
+    <p>If you have any questions or suggestions, please contact <a href="mailto:training@gaslight.co">Gaslight</a>.</p>
+    <p>Have a great day!</p>
+    <p>Gaslight</p>
+
+    <h3>Your Receipt</h3>
+    <p>
+      <%= @registration.name %><br />
+      <%= @registration.email %><br />
+      <%= @registration.organization %><br />
+      <%= @registration.phone %><br />
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @registration.course.title %></td>
+          <td><%= number_to_currency(@registration.amount) %> USD</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Total: 1 item</th>
+          <th><%= number_to_currency(@registration.amount) %> USD</th>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
+
