@@ -46,6 +46,27 @@ GIT
       uuidtools
 
 PATH
+  remote: ../training_app
+  specs:
+    training_app (0.0.1)
+      active_model_serializers
+      compass-rails (= 1.1.0.pre)
+      decent_exposure
+      eco
+      ember-rails
+      ember-source (~> 1.2.0)
+      font-awesome-rails
+      geocoder
+      haml (~> 4.0)
+      haml-rails
+      leaflet-rails
+      rails (~> 4.0.0)
+      redcarpet
+      sass-rails (~> 4.0.0)
+      stripe
+      zurb-foundation (~> 4.0)
+
+PATH
   remote: engines/blog_app
   specs:
     blog_app (0.0.1)
@@ -65,27 +86,6 @@ PATH
       redcarpet
       sass-rails (~> 4.0.0)
       stringex
-
-PATH
-  remote: engines/training_app
-  specs:
-    training_app (0.0.1)
-      active_model_serializers
-      compass-rails (= 1.1.0.pre)
-      decent_exposure
-      eco
-      ember-rails
-      ember-source (~> 1.2.0)
-      font-awesome-rails
-      geocoder
-      haml (~> 4.0)
-      haml-rails
-      leaflet-rails
-      rails (~> 4.0.0)
-      redcarpet
-      sass-rails (~> 4.0.0)
-      stripe
-      zurb-foundation (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
