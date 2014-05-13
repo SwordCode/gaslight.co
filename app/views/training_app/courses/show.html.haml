@@ -1,0 +1,50 @@
+= content_for(:title) { "#{course.title} | #{course.venue_city}" }
+= content_for(:head) do
+  = javascript_include_tag "training_app/map"
+#main
+  .row
+    .large-12.columns
+      %h1.heading= course.title
+      .underline--blue
+
+  .row
+    .large-7.columns
+      .course__description= markdown(course.description_main)
+      %hr
+      - if course.instructors.present?
+        %h2.heading Instructors
+        - course.instructors.each do |instructor|
+          .instructor
+            %img.instructor__image{src: instructor.image_url }
+            %h5.instructor__name= instructor.name
+            %p.instructor__bio= instructor.bio
+
+    .columns.large-4.sidebar--training.center
+      .purchase-panel
+        - if course.online?
+          %h3.purchase-panel__price= number_to_currency(course.current_price, precision: 0)
+          %a.purchase-panel__try.button.button--quiet{href: classroom_index_path(anchor: "/courses/#{course.id}")} Try now
+          %a.purchase-panel__buy.button.button--brand1{href: classroom_index_path(anchor: "/courses/#{course.id}/register")} Buy Now
+        - else
+          - if course.venue && course.venue.geocoded?
+            = map(container_id: "map-panel",
+              center: { latlng: [course.venue.latitude, course.venue.longitude], zoom: 10 },
+              markers: [{ latlng: [course.venue.latitude, course.venue.longitude] }])
+          %h3.purchase-panel__price
+            = course.venue_city
+            %span= number_to_currency(course.current_price, precision: 0)
+          %h5.purchase-panel__date= course.date_range
+          %h5= course.venue_name
+          %a.purchase-panel__buy.button.button--brand1{href: course.registration_link} Register Now
+      - if course.in_person?
+        .request
+          %hr
+          %h4 Can't make this date or location?
+          %p
+            We’d love to set up a private training session for your group or team.
+          %a.brand1--link{href: 'mailto:hello@gaslight.co?subject=Private Training'} Contact Us Now
+
+      %hr
+        %p
+          Stay up to date on all of our training offerings.
+        = render "training_app/application/newsletter"

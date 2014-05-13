@@ -1,0 +1,16 @@
+.columns.large-6
+  .course.center{class: course_class(course)}
+    %a{href: course_path(course)}
+      %img.course__img{src: course.image_url}
+    %h2.course__title.subheading= course.title
+    %p= course.meta
+    .course__actions
+      - if course.online?
+        %a.button.button--quiet{href: classroom_index_path(anchor: "/courses/#{course.id}")} Try Now
+        %a.button.button--brand1{href: classroom_index_path(anchor: "/courses/#{course.id}/register")} Buy Now
+      - elsif course.active?
+        %a.button.button--quiet{href: course_path(course)} Learn more about the class.
+        %a.button.button--brand1{href: course.registration_link} Save Your Spot
+    .course__type
+      = image_tag "training_app/#{course_class(course)}.svg", :class => "course__type-icon"
+      %p= course.online? ? 'Online' : 'In Person'
