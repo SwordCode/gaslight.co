@@ -114,7 +114,12 @@
   padding-top: 130px
   padding-bottom: 115px
   background: transparentize($brand1, 0.15)
-
+@media only screen and (min-width : 320px) and (max-width: 767px)
+  .bounce-house img
+    height: 250px
+  .bounce-house:hover .bounce-house__content
+    padding-top: 90px
+    padding-bottom: 70px
 
 // ------------------------------------
 // Client list
@@ -347,6 +352,16 @@ ul.photos li
 .hero--eta--second
   background-image: image-url("casestudy/eta--second.jpg")
 
+.hero__apex
+  background-image: image-url("casestudy/apex__hero.jpg")
+  min-height: 350px
+
+.hero--apex-second
+  background-image: image-url("casestudy/apex__second.jpg")
+
+.hero--apex-third
+  background-image: image-url("casestudy/apex__third.jpg")
+
 @media only screen and (min-width : 320px) and (max-width: 767px)
   .hero__header
     h1
@@ -359,6 +374,10 @@ ul.photos li
   .hero__quote
     h2
       font-size: 1.5em
+
+  .hero__apex
+    background-image: image-url("casestudy/apex__hero.jpg")
+    min-height: 350px
 
 // ------------------------------------
 // Modals

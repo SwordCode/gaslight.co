@@ -1,7 +1,7 @@
 - content_for(:title) { "Gaslight: Powering Hardware Innovation With Software" }
 
 #main.content.with-photo
-  .hero.hero--lumbee--first
+  .hero.hero__apex
     .hero__header.hero__header--brand1
       .row
         .large-11.columns
@@ -23,17 +23,17 @@
       %p.lead APEX focuses on supply chain technology, creating automated systems that take the pain out of inventory control. Instead of monitoring how many bolts or bandages your company uses manually, APEX creates high tech cabinets or large walk-in enclosures that automatically track what employees use through a variety of sensors.
       %p We partnered with the company’s R&D team to help them bring new hardware ideas to life by creating the software to manage those devices. Our flexible, agile development process allowed us to help them try out ideas faster and build the final software in a fraction of the time it’s taken the company for similar projects in the past.
 
-  .hero.hero--lumbee--second
+  .hero.hero--apex-second
     .hero__content
       .row
         .large-7.columns
           .flex-video
-            %iframe{ id: "ytplayer", type: "text/html", src: "//www.youtube.com/embed/hfrcN7UptYw?rel=0", frameborder: "0", allowfullscreen: "allowfullscreen"}
+            %iframe{ id: "ytplayer", type: "text/html", src: "//www.youtube.com/embed/8X-ZgEYCVVc", frameborder: "0", allowfullscreen: "allowfullscreen"}
         .large-5.columns
           .hero__quote
             %h3 “Gaslight is very much in an agile mindset. They are very quick to develop code and very quick to develop new features.”
-            %h4 Ben Savage
-            %h4.case-study__quote--title VP of Innovation and Advanced Technology at APEX
+            %h4 <strong>Ben Savage</strong>
+            %h4 VP of Innovation and Advanced Technology at APEX
 
   %section
     .row
@@ -44,29 +44,30 @@
           %li Moved from idea to prototype to product in months instead of years.
           %li Improved device performance with sub-second reaction times atypical for the industry
           %li Created software architecture slated to drive all the company’s machines for the next five years.
-      .large-9.columns
-        %p.lead Our software helped drive four main types of sensors: digital scales, light sensors, locks and pushers (to move things on a shelf). If someone took three things off a shelf, for instance, we were able to translate that change in weight to automatically generate a report and even email someone when it’s time to re-order. Other interactions range from snapping a photo when someone removes something from a shelf to unlocking a cabinet when a person enters a code.
+      .large-8.columns
+        %img{src: image_path("casestudy/apex__mockup.jpg"), alt: "apex keypad" }
+  %section
+    .hero.hero--apex-third
+      .hero__content
+        .row
+          .large-8.large-offset-2.columns
+            %p.lead--light.standalone Our software helped drive four main types of sensors: digital scales, light sensors, locks and pushers (to move things on a shelf). If someone took three things off a shelf, for instance, we were able to translate that change in weight to automatically generate a report and even email someone when it’s time to re-order. Other interactions range from snapping a photo when someone removes something from a shelf to unlocking a cabinet when a person enters a code.
 
-
-    .row--lg-margin-top
-      .large-6.columns
-        %h3.sidebar__heading--case-study Data Visualization
+  %section
+    .row
+      .large-3.columns.sidebar
+        .underline.underline--blue.hide-for-small
+        %h3.sidebar__heading--case-study Want to innovate faster?
+        %p Let’s talk. We can help make your R&D concepts come alive
+        %a.button--full-width.button--brand1{href: page_path("contact"), rel: "Case Study Lets Talk button" } Contact Us
+        %hr.show-for-small
+      .large-8.large-offset-1.columns
+        %h3.subheading Data Visualization
         %p Displays automatically change when stock is added or taken away. This immediate feedback increases people’s engagement. While typical software revolves around typing or clicking, this project focused on interacting with and reacting to actions in the physical world. Our software tracks and triggers a variety of physical movements and automatically translates those actions into meaningful inventory reports.
+        %hr
+        %h2.subheading Automating Inventory
+        %p New software and hardware allows large inventory enclosures like this one to automatically track and report on usage and streamline the re-ordering process.
 
-      .large-6.columns
-        %img{src: image_path("casestudy/mobile.png"), alt: "mobile" }
-
-  %section.row
-    .large-3.columns.sidebar
-      .underline.underline--blue.hide-for-small
-      %h3.sidebar__heading--case-study Want to innovate faster?
-      %p Let’s talk. We can help make your R&D concepts come alive
-      %a.button--full-width.button--brand1{href: page_path("contact"), rel: "Case Study Lets Talk button" } Contact Us
-      %hr.show-for-small
-    .large-8.large-offset-1.columns
-      %h2.subheading Automating Inventory
-
-      %p New software and hardware allows large inventory enclosures like this one to automatically track and report on usage and streamline the re-ordering process.
   %hr
   .row.pagination
     .large-6.columns
