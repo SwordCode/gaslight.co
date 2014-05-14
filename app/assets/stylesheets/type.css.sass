@@ -4,7 +4,7 @@ html
 a
   text-decoration: none
 
-a:hover, a:active, a:focus 
+a:hover, a:active, a:focus
   outline: none
   color: darken($brand1,10)
 
@@ -110,9 +110,9 @@ p.declaration
 
 .subheading
   @extend %heading
-  font-size: 1.2em
+  font-size: 1.4em
   font-weight: 700
-  
+
 .subheading--light
   @extend %heading
   font-size: 1.2em
@@ -178,11 +178,11 @@ p
 p.light
   color: #fff
 
-aside p 
+aside p
   @extend %body
   font-size: 1em
   color: #333
-  line-height: 1.35 
+  line-height: 1.35
   font-style: italic
 
 %headline
@@ -190,46 +190,46 @@ aside p
   text-rendering: optimizeLegibility
   line-height: 1.1em
   color: $brandBase
-  small 
+  small
     font-size: 100%
     line-height: 0
 
-h1 
+h1
   @extend %headline
   font-weight: bolder
   line-height: 1.1em
-h2  
+h2
   @extend %headline
   font-weight: bold
-h3  
+h3
   @extend %headline
   font-size: 1.2em
   font-weight: 700
-h4  
+h4
   @extend %headline
   font-weight: bold
-h5  
+h5
   @extend %headline
   font-weight: bolder
   margin: 0
-h6  
+h6
   @extend %headline
 
-hr 
+hr
   border: solid #ddd
   border-width: 1px 0 0
   clear: both
   margin: 22px 0 21px
   height: 0
 
-i 
+i
   font-style: italic
-  line-height: inherit 
+  line-height: inherit
 
 strong, b, .strong
   font-weight: bolder
   line-height: inherit
-small 
+small
   @extend %body
   font-size: 100%
   line-height: inherit
@@ -239,7 +239,7 @@ code
   font-weight: bold
   background: #ffff99
 
-h2.title--expertise 
+h2.title--expertise
   @extend %body
   font-weight: bold
   margin: 10px 0
@@ -249,17 +249,17 @@ h2.title--expertise
 ul, ol, dl
   font-size: 1em
   list-style-position: inside
-  
+
 ul
   li
-    ul, ol 
+    ul, ol
       margin: 20px
       margin-bottom: 0
-  &.square, &.circle, &.disc 
+  &.square, &.circle, &.disc
     margin: 1em
-  &.square 
+  &.square
     list-style-type: square
-    li ul 
+    li ul
       list-style: inherit
   &.circle
     list-style-type: circle
@@ -273,25 +273,25 @@ ul
     list-style: none
   &.large li
     line-height: 21px
-ol 
+ol
   margin: 20px
   li
     ul, ol
       margin: 20px
-      margin-bottom: 0 
+      margin-bottom: 0
 
 // Blockquotes ----------------------
 blockquote, blockquote p
   line-height: 1.5
-  color: lighten($input-font-color, 30%) 
+  color: lighten($input-font-color, 30%)
 
-blockquote 
+blockquote
   margin: 0 0 1em
   padding: 100px
   font-size: 14px
   color: #000
   @include brandColors(background-color, 30%)
-  
+
   cite
     font-style: normal
     display: block
@@ -299,13 +299,13 @@ blockquote
     font-size: .8em
     a, a:visited
       color: lighten($input-font-color, 20%)
-  
+
 abbr, acronym
   text-transform: uppercase
   font-size: 90%
   color: #222
   border-bottom: 1px solid #ddd
-  cursor: help 
+  cursor: help
 
 abbr
   text-transform: none
@@ -326,7 +326,7 @@ abbr
   display: none !important
 
 @media print
-  * 
+  *
     background: transparent !important
     color: black !important
     box-shadow: none !important
@@ -357,12 +357,11 @@ abbr
     widows: 3
   h2, h3
     page-break-after: avoid
-  .hide-on-print 
+  .hide-on-print
     display: none !important
-  .print-only 
+  .print-only
     display: block !important
-  .hide-for-print 
+  .hide-for-print
     display: none !important
-  .show-for-print 
+  .show-for-print
     display: inherit !important
-
