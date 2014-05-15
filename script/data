@@ -2,10 +2,13 @@
 
 set -e
 
-dropdb gaslight_dev
-createdb gaslight_dev
+APP=gaslight
+DB=${DB-gaslight_development}
 
-heroku pgbackups:capture --expire --app gaslight
-curl -Lo latest.dump `heroku pgbackups:url --app gaslight`
-pg_restore --verbose --no-acl --no-owner -d gaslight_dev latest.dump
+dropdb --if-exists $DB
+createdb $DB
+
+heroku pgbackups:capture --expire --app $APP
+curl -Lo latest.dump `heroku pgbackups:url --app $APP`
+pg_restore --verbose --no-acl --no-owner -d $DB latest.dump
 
