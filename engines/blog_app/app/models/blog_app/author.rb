@@ -279,7 +279,7 @@ module BlogApp
             "github": "apcomplete",
             "avatar": "",
             "tumblr": "apcomplete"
-          },
+          }
         ]
       }').with_indifferent_access
     end
