@@ -268,7 +268,18 @@ module BlogApp
             "github": "janders223",
             "avatar": "",
             "tumblr": "janders223"
-          }
+          },
+          {
+            "id": 35,
+            "name":"Alex Padgett",
+            "first_name":"Alex",
+            "email":"alexp@gaslight.co",
+            "twitter":"apcomplete",
+            "google_plus":"https://plus.google.com/+AlexPadgett",
+            "github": "apcomplete",
+            "avatar": "",
+            "tumblr": "apcomplete"
+          },
         ]
       }').with_indifferent_access
     end
