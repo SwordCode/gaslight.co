@@ -24,12 +24,5 @@ module Gaslight
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.compass.images_dir = '/app/assets/images'
-
-    config.middleware.use Rack::Cors do
-      allow do
-        origins 'localhost:3000','gaslight.co'
-        resource '/authors', :headers => :any, :methods => [:get]
-      end
-    end
   end
 end
