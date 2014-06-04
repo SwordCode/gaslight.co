@@ -3,24 +3,24 @@ require 'spec_helper'
 describe "URL Rewriting" do
   context "route not found" do
     it "returns a 404 and shows the landing page" do
-      get 'http://gaslight.co/foo-bar'
+      get 'http://teamgaslight.com/foo-bar'
       response.response_code.should == 404
     end
   end
 
   context 'www subdomain to root' do
-    let(:host) { 'www.gaslight.co' }
+    let(:host) { 'www.teamgaslight.com' }
 
     it 'redirects to root' do
       get "http://#{host}"
       response.response_code.should eq(301)
-      response.location.should eq('http://gaslight.co/')
+      response.location.should eq('http://teamgaslight.com/')
     end
 
     it 'redirects to root' do
       get "https://#{host}"
       response.response_code.should eq(301)
-      response.location.should eq('https://gaslight.co/')
+      response.location.should eq('https://teamgaslight.com/')
     end
 
 
@@ -39,7 +39,7 @@ describe "URL Rewriting" do
       it "rewrites root requests to the new blog" do
         get "http://#{host}"
         response.response_code.should == 301
-        response.location.should eq('http://gaslight.co/blog')
+        response.location.should eq('http://teamgaslight.com/blog')
       end
 
       it "rewrites old blog article requests to the new blog" do
@@ -67,11 +67,11 @@ describe "URL Rewriting" do
       it "rewrites old blog root requests to the new blog" do
         get "http://#{host}"
         response.response_code.should == 301
-        response.location.should eq('http://gaslight.co/blog')
+        response.location.should eq('http://teamgaslight.com/blog')
 
         get "http://#{host}/"
         response.response_code.should == 301
-        response.location.should eq('http://gaslight.co/blog')
+        response.location.should eq('http://teamgaslight.com/blog')
       end
 
       it "rewrites old blog article requests to the new blog" do
@@ -88,19 +88,11 @@ describe "URL Rewriting" do
     end
   end
 
-  context "coffee.gaslightsoftware.com" do
-    it "rewrites old coffee requests to the new page" do
-      get 'http://coffee.gaslightsoftware.com'
-      response.response_code.should == 301
-      response.location.should == 'http://gaslight.co/coffee'
-    end
-  end
-
   context "training.gaslightsoftware.com" do
     it "rewrites old training requests to the new subdomain" do
       get 'http://training.gaslightsoftware.com/workshop/12345'
       response.response_code.should == 301
-      response.location.should match('training.gaslight.co')
+      response.location.should match('https://teamgaslight.com/training')
     end
   end
 
@@ -108,21 +100,25 @@ describe "URL Rewriting" do
     it "redirects old site requests to the new site" do
       get 'http://gaslightsoftware.com/post/12345'
       response.response_code.should == 301
-      response.location.should == 'http://gaslight.co/post/12345'
+      response.location.should == 'http://teamgaslight.com/post/12345'
     end
 
     it "redirects the www subdomain to gaslight.co" do
-      get 'http://www.gaslightsoftware.com/something'
+      get 'http://www.gaslight.co/something'
       response.response_code.should == 301
-      response.location.should == 'http://gaslight.co/something'
+      response.location.should == 'http://teamgaslight.com/something'
     end
   end
 
   context "authors" do
     it "redirects old authors new blog engine" do
+      get 'http://teamgaslight.com/authors'
+      response.response_code.should == 301
+      response.location.should == 'http://teamgaslight.com/blog/authors'
+
       get 'http://gaslight.co/authors'
       response.response_code.should == 301
-      response.location.should == 'http://gaslight.co/blog/authors'
+      response.location.should == 'http://teamgaslight.com/blog/authors'
     end
   end
 end
