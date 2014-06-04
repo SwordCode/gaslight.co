@@ -13,7 +13,7 @@ describe NotificationsMailer do
   let(:mail) { NotificationsMailer.new_message(message) }
 
   it 'sets the from' do
-    mail.from.should include('hello@gaslight.co')
+    mail.from.should include('hello@teamgaslight.com')
   end
 
   it 'sets the subject' do
@@ -24,7 +24,7 @@ describe NotificationsMailer do
     mail.body.should match('the body')
   end
 
-  it 'sends to hello@gaslight.co' do
+  it 'sends to hello@teamgaslight.com' do
     mail.to.should include('chris@cdmwebs.com')
   end
 

@@ -1,6 +1,6 @@
 class NotificationsMailer < ActionMailer::Base
-  default from: "Gaslight Website <hello@gaslight.co>"
-  default to: "hello@gaslight.co"
+  default from: "Gaslight Website <hello@teamgaslight.com>"
+  default to: "hello@teamgaslight.com"
 
   def new_message(message)
     @name = message.name
@@ -16,7 +16,7 @@ class NotificationsMailer < ActionMailer::Base
 
     mail(subject: "Fwd: Contact Form",
          bcc: ENV.fetch('HIGHRISE_DROPBOX'),
-         cc: 'hello@gaslight.co',
+         cc: 'hello@teamgaslight.com',
          to: @email_with_name)
   end
 end
