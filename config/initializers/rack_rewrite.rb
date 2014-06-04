@@ -32,7 +32,7 @@ Gaslight::Application.configure do
     }
 
     r301 %r{.*}, "http://teamgaslight.com$&", if: Proc.new { |rack_env|
-      rack_env['SERVER_NAME'] != current_domain
+      Rails.env.production? && (rack_env['SERVER_NAME'] != current_domain)
     }
 
   end
