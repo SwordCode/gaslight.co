@@ -28,8 +28,7 @@ Gaslight::Application.configure do
     }
 
     r301 %r{.*}, "http://teamgaslight.com/blog/authors", if: Proc.new { |rack_env|
-      rack_env['SERVER_NAME'] != current_domain &&
-        rack_env['REQUEST_URI'] == "/authors"
+      rack_env['REQUEST_URI'] == "/authors"
     }
 
     r301 %r{.*}, "http://teamgaslight.com$&", if: Proc.new { |rack_env|
