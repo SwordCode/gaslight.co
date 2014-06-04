@@ -1,5 +1,4 @@
 Gaslight::Application.routes.draw do
-  get "office_hours/create"
   mount TrainingApp::Engine, at: 'training'
 
   mount BlogApp::Engine, at: 'blog'
@@ -11,9 +10,6 @@ Gaslight::Application.routes.draw do
 
   get '/contact', to: 'contact#new'
   resource :contact, controller: :contact, only: :create
-
-#  get '/office-hours', to: "office_hours#new"
-#  resource :office_hours, controller: :office_hours, path: '/office-hours', only: [:create, :new]
 
   get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: "xml" }
   get 'robots.txt' => 'robots#index', as: 'robots', defaults: { format: "txt" }
