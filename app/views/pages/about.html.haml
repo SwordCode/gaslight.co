@@ -233,6 +233,19 @@
                   =image_tag "icons/about-mail-01.svg", :class => "icon--team"
         %li
           .photo
+            %img{src: image_path("team/alex-p.jpg"), alt: "Alex Padgett" }
+            .overlay
+              .links
+                %h3.subheading--light Alex Padgett
+                %p.light Developer
+                %a.icon--twitter{target: "_blank", href: "http://twitter.com/apcomplete", rel: "Team Social"}
+                  =image_tag "icons/twitter-07.svg", :class => "icon--team"
+                %a.icon--github{target: "_blank", href: "http://github.com/apcomplete", rel: "Team Social"}
+                  =image_tag "icons/github-05.svg", :class => "icon--team"
+                %a.icon--mail{href: "mailto:alexp@gaslight.co", rel: "Team Social"}
+                  =image_tag "icons/about-mail-01.svg", :class => "icon--team"
+        %li
+          .photo
             %img{src: image_path("team/kevin.jpg"), alt: "Kevin Rockwood" }
             .overlay
               .links
@@ -283,4 +296,3 @@
                   =image_tag "icons/github-05.svg", :class => "icon--team"
                 %a.icon--mail{href: "mailto:alex@teamgaslight.com", rel: "Team Social"}
                   =image_tag "icons/about-mail-01.svg", :class => "icon--team"
-
