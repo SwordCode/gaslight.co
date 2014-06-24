@@ -131,6 +131,19 @@
                   =image_tag "icons/about-mail-01.svg", :class => "icon--team"
         %li
           .photo
+            %img{src: image_path("team/kenny.jpg"), alt: "Kenny Glenn" }
+            .overlay
+              .links
+                %h3.subheading--light Kenny Glenn
+                %p.light Designer
+                %a.icon--twitter{target: "_blank", href: "http://twitter.com/_kennyglenn", rel: "Team Social"}
+                  =image_tag "icons/twitter-07.svg", :class => "icon--team"
+                %a.icon--github{target: "_blank", href: "http://github.com/kennyglenn", rel: "Team Social"}
+                  =image_tag "icons/github-05.svg", :class => "icon--team"
+                %a.icon--mail{href: "mailto:kenny@teamgaslight.com", rel: "Team Social"}
+                  =image_tag "icons/about-mail-01.svg", :class => "icon--team"
+        %li
+          .photo
             %img{src: image_path("team/dewayne.jpg"), alt: "Dewayne Greenwood" }
             .overlay
               .links
